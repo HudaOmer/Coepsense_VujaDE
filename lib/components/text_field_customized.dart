@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/components/colors.dart';
+import 'colors.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldCustomized extends StatelessWidget {

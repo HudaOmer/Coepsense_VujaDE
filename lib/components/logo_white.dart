@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/components/icons.dart';
+import 'icons.dart';
 import 'package:flutter/material.dart';
 
 class LogoWhite extends StatelessWidget {

@@ -1,7 +1,7 @@
-import 'package:corpsense_vujade/components/colors.dart';
-import 'package:flutter/material.dart';
+import '../../components/colors.dart';
 import '../../components/colored_button.dart';
 import '../../components/text_field_customized.dart';
+import 'package:flutter/material.dart';
 
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({super.key});
