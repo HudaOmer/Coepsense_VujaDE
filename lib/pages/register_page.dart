@@ -1,5 +1,5 @@
-import 'package:corpsense_vujade/components/colored_button.dart';
-import 'package:corpsense_vujade/components/text_field_customized.dart';
+import '../components/colored_button.dart';
+import '../components/text_field_customized.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {

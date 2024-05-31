@@ -1,6 +1,6 @@
-import 'package:corpsense_vujade/components/icons.dart';
-import 'package:flutter/material.dart';
+import '../components/icons.dart';
 import '../components/logo_white.dart';
+import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

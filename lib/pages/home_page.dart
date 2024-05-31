@@ -1,9 +1,9 @@
-import 'package:corpsense_vujade/components/colors.dart';
-import 'package:corpsense_vujade/components/icon_customized.dart';
-import 'package:corpsense_vujade/components/icons.dart';
-import 'package:corpsense_vujade/pages/home_pages_navigation/main_home_page.dart';
-import 'package:flutter/material.dart';
+import '../components/colors.dart';
+import '../components/icon_customized.dart';
+import '../components/icons.dart';
+import 'home_pages_navigation/main_home_page.dart';
 import 'home_pages_navigation/edit_profile.dart';
+import 'package:flutter/material.dart';
 
 // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
 

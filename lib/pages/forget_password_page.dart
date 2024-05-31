@@ -1,9 +1,9 @@
-import 'package:corpsense_vujade/components/colored_button.dart';
-import 'package:corpsense_vujade/components/text_field_customized.dart';
-import 'package:flutter/material.dart';
+import '../components/colored_button.dart';
+import '../components/text_field_customized.dart';
 import '../components/icon_customized.dart';
 import '../components/icons.dart';
 import '../components/colors.dart';
+import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});

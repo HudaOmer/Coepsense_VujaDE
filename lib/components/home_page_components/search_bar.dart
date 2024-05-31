@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/components/colors.dart';
+import '../../components/colors.dart';
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {

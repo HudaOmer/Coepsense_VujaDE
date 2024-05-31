@@ -1,5 +1,5 @@
-import 'package:corpsense_vujade/components/colored_button.dart';
-import 'package:corpsense_vujade/components/logo.dart';
+import '../components/colored_button.dart';
+import '../components/logo.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
