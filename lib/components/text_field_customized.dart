@@ -44,6 +44,7 @@ class TextFieldFormCustomized extends StatelessWidget {
           floatingLabelStyle: TextStyle(color: contrastColor),
           label: Text(label, style: TextStyle(color: contrastColor)),
           hintText: hint,
+          // hintStyle: TextStyle(fontWeight: FontWeight.w300),
           contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           focusedBorder: OutlineInputBorder(
               gapPadding: 5,

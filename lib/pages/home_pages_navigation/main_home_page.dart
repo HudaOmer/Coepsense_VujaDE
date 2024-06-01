@@ -1,11 +1,12 @@
 import '../../components/colors.dart';
 import '../../components/home_page_components/category_list.dart';
+import '../../components/home_page_components/colored_bar_chart.dart';
 import '../../components/home_page_components/search_bar.dart';
 import '../../components/icon_customized.dart';
 import '../../components/icons.dart';
 import 'package:flutter/material.dart';
 
-double appbarheight = 170;
+double appbarheight = 150;
 
 class MainHomePage extends StatelessWidget {
   const MainHomePage({super.key});
@@ -31,12 +32,18 @@ class MainHomePage extends StatelessWidget {
         ),
         actions: [IconCustomized(height: appbarheight, iconName: farmer)],
       ),
-      body: Column(
-        children: const [
-          Center(child: SearchBar()),
-          SizedBox(height: 30),
-          CategoryList(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            Center(child: SearchBar()),
+            SizedBox(height: 10),
+            CategoryList(),
+            SizedBox(height: 15),
+            ColoredBarChart(
+              weeklySummery: [1000, 600, 1500, 250, 1700, 1200, 650],
+            )
+          ],
+        ),
       ),
     );
   }

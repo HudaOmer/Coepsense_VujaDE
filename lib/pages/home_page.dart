@@ -5,6 +5,8 @@ import 'home_pages_navigation/main_home_page.dart';
 import 'home_pages_navigation/edit_profile.dart';
 import 'package:flutter/material.dart';
 
+double iconSize = 35;
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -49,26 +51,26 @@ class _HomePageState extends State<HomePage> {
                     label: 'Home',
                     tooltip: 'Home',
                     icon: IconCustomized(
-                        height: 40,
+                        height: iconSize,
                         iconName: home.mode[currentIndex == 0 ? 0 : 1])),
                 BottomNavigationBarItem(
                     label: 'Calender',
                     tooltip: 'Calender',
                     icon: IconCustomized(
-                        height: 40,
+                        height: iconSize,
                         iconName: calender.mode[currentIndex == 1 ? 0 : 1])),
                 BottomNavigationBarItem(
                     label: 'Notifications',
                     tooltip: 'Notifications',
                     icon: IconCustomized(
-                        height: 40,
+                        height: iconSize,
                         iconName:
                             notifications.mode[currentIndex == 2 ? 0 : 1])),
                 BottomNavigationBarItem(
                     label: 'Profile',
                     tooltip: 'Profile',
                     icon: IconCustomized(
-                        height: 40,
+                        height: iconSize,
                         iconName: profile.mode[currentIndex == 3 ? 0 : 1])),
               ]),
         ),

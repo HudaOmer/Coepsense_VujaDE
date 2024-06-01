@@ -12,7 +12,7 @@ class LogoWhite extends StatelessWidget {
         SizedBox(width: 110, child: Image.asset(logoWhite)),
         const SizedBox(height: 30),
         const Center(
-            child: Text("CorpeSense",
+            child: Text("CropSense",
                 style: TextStyle(color: Colors.white, fontSize: 20)))
       ],
     );
