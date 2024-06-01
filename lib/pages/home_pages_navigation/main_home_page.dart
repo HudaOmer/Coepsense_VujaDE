@@ -34,14 +34,14 @@ class MainHomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-            Center(child: SearchBar()),
-            SizedBox(height: 10),
-            CategoryList(),
-            SizedBox(height: 15),
+          children: [
+            const Center(child: SearchBar()),
+            const SizedBox(height: 10),
+            const CategoryList(),
+            const SizedBox(height: 15),
             ColoredBarChart(
-              weeklySummery: [1000, 600, 1500, 250, 1700, 1200, 650],
-            )
+                weeklySummery: const [1000, 600, 1500, 250, 1700, 1200, 650],
+                barColor: mainColor)
           ],
         ),
       ),

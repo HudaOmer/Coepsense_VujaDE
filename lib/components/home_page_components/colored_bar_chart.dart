@@ -1,12 +1,13 @@
 import '../../components/colors.dart';
+import '../bar_chart_components/bar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-import '../bar_chart_components/bar_data.dart';
-
 class ColoredBarChart extends StatelessWidget {
   final List<double> weeklySummery;
-  const ColoredBarChart({super.key, required this.weeklySummery});
+  final Color barColor;
+  const ColoredBarChart(
+      {super.key, required this.weeklySummery, required this.barColor});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,7 @@ class ColoredBarChart extends StatelessWidget {
             .map((data) => BarChartGroupData(x: data.x, barRods: [
                   BarChartRodData(
                       toY: data.y,
-                      color: mainColor,
+                      color: barColor,
                       width: 10.0,
                       borderRadius: BorderRadius.circular(40.0))
                 ]))
