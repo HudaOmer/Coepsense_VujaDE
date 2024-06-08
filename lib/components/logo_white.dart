@@ -13,7 +13,8 @@ class LogoWhite extends StatelessWidget {
         const SizedBox(height: 30),
         const Center(
             child: Text("CropSense",
-                style: TextStyle(color: Colors.white, fontSize: 20)))
+                style: TextStyle(
+                    color: Colors.white, fontSize: 20, fontFamily: "Saken")))
       ],
     );
   }

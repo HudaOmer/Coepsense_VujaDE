@@ -2,8 +2,11 @@ import '../components/colors.dart';
 import '../components/icon_customized.dart';
 import '../components/icons.dart';
 import 'home_pages_navigation/main_home_page.dart';
+import 'home_pages_navigation/main_home_updated.dart';
 import 'home_pages_navigation/edit_profile.dart';
 import 'package:flutter/material.dart';
+
+import 'home_pages_navigation/settings_page.dart';
 
 double iconSize = 35;
 
@@ -17,10 +20,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   List<Widget> pages = const [
+    MainHomePageUpdated(),
     MainHomePage(),
-    Center(child: Text("Calender")),
-    Center(child: Text("Notifications")),
-    EditProfilePage()
+
+    //Center(child: Text("Calender")),
+    // Center(child: Text("Notifications")),
+    EditProfilePage(),
+    SettingsPage(),
   ];
 
   @override

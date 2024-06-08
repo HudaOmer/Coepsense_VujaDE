@@ -12,7 +12,9 @@ class Logo extends StatelessWidget {
       children: [
         SizedBox(width: 100, child: Image.asset(logoGreen)),
         const SizedBox(height: 20),
-        Center(child: Text("CropSense", style: TextStyle(color: contrastColor)))
+        Center(
+            child: Text("CropSense",
+                style: TextStyle(color: contrastColor, fontFamily: "Saken")))
       ],
     );
   }

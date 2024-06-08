@@ -5,6 +5,7 @@ String lock = 'assets/images/icons/Lock.png';
 String carbs = 'assets/images/icons/Carbs.png';
 String humidity = 'assets/images/icons/humidity.png';
 String trash = 'assets/images/icons/Trash.png';
+String notified = 'assets/images/icons/Bell_pin_fill.png';
 
 class IconMode {
   final List<String> mode;

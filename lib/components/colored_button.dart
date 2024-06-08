@@ -20,7 +20,9 @@ class ColoredButton extends StatelessWidget {
           alignment: Alignment.center,
           height: 50,
           width: MediaQuery.of(context).size.width * 0.8,
-          child: Text(text, style: const TextStyle(color: Colors.white))),
+          child: Text(text,
+              style:
+                  const TextStyle(color: Colors.white, fontFamily: "Saken"))),
     );
   }
 }
