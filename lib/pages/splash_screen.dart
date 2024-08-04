@@ -1,4 +1,4 @@
-import '../components/icons.dart';
+import '../utils/icons.dart';
 import '../components/logo_white.dart';
 import 'package:flutter/material.dart';
 

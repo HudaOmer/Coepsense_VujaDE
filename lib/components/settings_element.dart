@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../data.dart';
+import '../utils/data.dart';
 
 // This is a customized settings element that uses a customized widget feel free
 // to edit its design from here, its used in the settings page (found in the

@@ -1,5 +1,5 @@
-import 'icons.dart';
-import 'colors.dart';
+import '../utils/icons.dart';
+import '../utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {

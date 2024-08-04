@@ -1,6 +1,6 @@
-import '../../components/colors.dart';
+import '../../utils/colors.dart';
 import '../../components/icon_customized.dart';
-import '../icons.dart';
+import '../../utils/icons.dart';
 import 'package:flutter/material.dart';
 
 class CategoryList extends StatelessWidget {

@@ -1,6 +1,6 @@
-import '../components/colors.dart';
+import '../utils/colors.dart';
 import '../components/icon_customized.dart';
-import '../components/icons.dart';
+import '../utils/icons.dart';
 import 'home_pages_navigation/main_home_page.dart';
 import 'home_pages_navigation/main_home_updated.dart';
 import 'home_pages_navigation/edit_profile.dart';

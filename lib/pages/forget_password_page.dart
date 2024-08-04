@@ -1,8 +1,8 @@
 import '../components/colored_button.dart';
 import '../components/text_field_customized.dart';
 import '../components/icon_customized.dart';
-import '../components/icons.dart';
-import '../components/colors.dart';
+import '../utils/icons.dart';
+import '../utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {

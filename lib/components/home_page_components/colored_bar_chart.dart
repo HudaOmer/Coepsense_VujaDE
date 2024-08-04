@@ -1,4 +1,4 @@
-import '../../components/colors.dart';
+import '../../utils/colors.dart';
 import '../bar_chart_components/bar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';

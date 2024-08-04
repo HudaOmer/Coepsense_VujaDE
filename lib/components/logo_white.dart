@@ -1,4 +1,4 @@
-import 'icons.dart';
+import '../../utils/icons.dart';
 import 'package:flutter/material.dart';
 
 class LogoWhite extends StatelessWidget {

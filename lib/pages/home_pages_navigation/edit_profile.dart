@@ -1,4 +1,4 @@
-import '../../components/colors.dart';
+import '../../utils/colors.dart';
 import '../../components/colored_button.dart';
 import '../../components/text_field_customized.dart';
 import 'package:flutter/material.dart';

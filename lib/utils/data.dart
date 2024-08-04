@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/colors.dart';
+import '../utils/colors.dart';
 
 TextStyle boldBigBlackTextStyle = const TextStyle(
     color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30);

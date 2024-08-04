@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../colors.dart';
+import '../../utils/colors.dart';
 
 class BarsContainer extends StatelessWidget {
   const BarsContainer({super.key});

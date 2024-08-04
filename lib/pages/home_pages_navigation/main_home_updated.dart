@@ -1,8 +1,8 @@
-import '../../components/colors.dart';
+import '../../utils/colors.dart';
 import '../../components/home_page_components/bars_template.dart';
 import '../../components/home_page_components/weather_template.dart';
 import '../../components/icon_customized.dart';
-import '../../components/icons.dart';
+import '../../utils/icons.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/home_page_components/zones_template.dart';

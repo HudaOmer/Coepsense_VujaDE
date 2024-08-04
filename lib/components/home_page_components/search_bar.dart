@@ -1,4 +1,4 @@
-import '../../components/colors.dart';
+import '../../utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
