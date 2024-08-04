@@ -1,9 +1,9 @@
-import '../../utils/colors.dart';
-import '../../components/home_page_components/category_list.dart';
-import '../../components/home_page_components/colored_bar_chart.dart';
-import '../../components/home_page_components/search_bar.dart';
-import '../../components/icon_customized.dart';
-import '../../utils/icons.dart';
+import '../utils/colors.dart';
+import '../components/home_page_components/category_list.dart';
+import '../components/home_page_components/colored_bar_chart.dart';
+import '../components/home_page_components/search_bar.dart';
+import '../components/icon_customized.dart';
+import '../utils/icons.dart';
 import 'package:flutter/material.dart';
 
 double appbarheight = 150;

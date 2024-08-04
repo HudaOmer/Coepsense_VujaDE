@@ -1,11 +1,12 @@
 import '../utils/colors.dart';
 import '../components/icon_customized.dart';
 import '../utils/icons.dart';
-import 'home_pages_navigation/main_home_page.dart';
-import 'home_pages_navigation/main_home_updated.dart';
-import 'home_pages_navigation/edit_profile.dart';
+import '../archive/main_home_page.dart';
+import '../archive/main_home_updated.dart';
+import 'home_pages_navigation/edit_profile_page.dart';
 import 'package:flutter/material.dart';
 
+import 'home_pages_navigation/home.dart';
 import 'home_pages_navigation/settings_page.dart';
 
 double iconSize = 35;
@@ -20,7 +21,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   List<Widget> pages = const [
-    MainHomePageUpdated(),
+    Home(),
     MainHomePage(),
 
     //Center(child: Text("Calender")),

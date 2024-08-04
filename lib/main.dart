@@ -5,7 +5,7 @@ import 'pages/home_page.dart';
 import 'pages/sign_in_page.dart';
 import 'pages/splash_screen.dart';
 import 'pages/welcome_page.dart';
-import 'pages/home_pages_navigation/edit_profile.dart';
+import 'pages/home_pages_navigation/edit_profile_page.dart';
 import 'pages/register_page.dart';
 import 'pages/tasks_page.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +47,7 @@ class MyApp extends ConsumerWidget {
               title: 'Flutter Demo',
               theme:
                   ThemeData(primarySwatch: Colors.green, fontFamily: "Ubuntu"),
-              home: CropPricePage()
+              home: HomePage()
               //  isAuthenticated ? const HomePage() : const SignInPage(),
               );
         });

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../utils/colors.dart';
 
-class WeatherContainer extends StatelessWidget {
-  const WeatherContainer({super.key});
+const Color textColor = Colors.white;
+
+class WeatherTemplate extends StatelessWidget {
+  const WeatherTemplate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,24 +14,28 @@ class WeatherContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: Container(
           padding: const EdgeInsets.all(20.0),
-          color: mediumGreyColor,
+          color: contrastColor,
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Text('Weather', style: TextStyle(fontSize: 20)),
+                  const Text('Weather',
+                      style: TextStyle(fontSize: 20, color: textColor)),
                   SizedBox(width: MediaQuery.of(context).size.width * 0.15),
                   Row(
-                    children: [
-                      Icon(Icons.cloud, size: 60, color: contrastColor),
-                      const SizedBox(width: 10),
-                      const Text('19 C', style: TextStyle(fontSize: 25))
+                    children: const [
+                      Icon(Icons.cloud, size: 60, color: textColor),
+                      SizedBox(width: 10),
+                      Text('19 C',
+                          style: TextStyle(fontSize: 25, color: textColor))
                     ],
                   )
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 15.0),
+              Container(height: 1, color: mainColor),
+              const SizedBox(height: 15.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
@@ -43,11 +49,11 @@ class WeatherContainer extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text('5:25 AM'),
+                  Text('5:25 AM', style: TextStyle(color: textColor)),
                   SizedBox(width: 30),
-                  Icon(Icons.sunny_snowing),
+                  Icon(Icons.sunny_snowing, color: textColor),
                   SizedBox(width: 30),
-                  Text('8:25 PM')
+                  Text('8:25 PM', style: TextStyle(color: textColor))
                 ],
               ),
               const SizedBox(height: 20),
@@ -67,7 +73,11 @@ class WeatherState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Icon(icon, size: 25), const SizedBox(height: 15), Text(text)],
+      children: [
+        Icon(icon, size: 25, color: textColor),
+        const SizedBox(height: 15),
+        Text(text, style: const TextStyle(color: textColor))
+      ],
     );
   }
 }

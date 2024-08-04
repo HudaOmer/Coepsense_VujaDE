@@ -1,11 +1,10 @@
-import '../../utils/colors.dart';
-import '../../components/home_page_components/bars_template.dart';
-import '../../components/home_page_components/weather_template.dart';
-import '../../components/icon_customized.dart';
-import '../../utils/icons.dart';
+import '../utils/colors.dart';
+import '../components/home_page_components/bars_template.dart';
+import '../components/home_page_components/weather_template.dart';
+import '../components/home_page_components/zones_template.dart';
+import '../components/icon_customized.dart';
+import '../utils/icons.dart';
 import 'package:flutter/material.dart';
-
-import '../../components/home_page_components/zones_template.dart';
 
 double appbarheight = 120;
 
@@ -41,7 +40,7 @@ class MainHomePageUpdated extends StatelessWidget {
             SizedBox(height: 20),
             ZoneList(),
             SizedBox(height: 10),
-            WeatherContainer(),
+            WeatherTemplate(),
             SizedBox(height: 15),
             BarsContainer(),
           ],
