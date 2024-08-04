@@ -1,3 +1,4 @@
+import '../../components/home_page_components/category_list.dart';
 import '../../components/home_page_components/search_bar.dart';
 import '../../utils/colors.dart';
 import '../../components/home_page_components/bars_template.dart';
@@ -69,6 +70,8 @@ class Home extends StatelessWidget {
                 )),
             const SizedBox(height: 10),
             const WeatherTemplate(),
+            const SizedBox(height: 10),
+            const CategoryList(),
           ],
         ),
       ),
