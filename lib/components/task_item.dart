@@ -18,8 +18,14 @@ class TaskItem extends StatelessWidget {
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             Container(
-                color: Colors.white, child: Image.asset(farmer, height: 70.0)),
-            const Text('Farm', style: TextStyle(color: Colors.white)),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: mainColor, width: 2),
+                    borderRadius: BorderRadius.circular(18.0)),
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: Image.asset(farmer, height: 70.0))),
+            const Text('Farm one', style: TextStyle(color: Colors.white)),
             SizedBox(width: MediaQuery.of(context).size.width * 0.3),
             Icon(Icons.arrow_forward_ios, color: mainColor),
           ])),

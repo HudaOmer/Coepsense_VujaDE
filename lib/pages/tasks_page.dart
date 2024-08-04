@@ -9,6 +9,7 @@ class TasksPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
           title: Center(
               child: Text(title, style: const TextStyle(color: Colors.black))),
@@ -17,10 +18,14 @@ class TasksPage extends StatelessWidget {
           leading: const Icon(Icons.arrow_back_ios, color: Colors.black)),
       body: SingleChildScrollView(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [TaskItem(), TaskItem(), TaskItem()],
-      )),
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            const TaskItem(),
+            const TaskItem(),
+            const TaskItem()
+          ])),
     );
   }
 }
