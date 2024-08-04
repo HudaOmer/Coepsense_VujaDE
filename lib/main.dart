@@ -1,3 +1,5 @@
+import 'package:corpsense_vujade/pages/Crop_price_page.dart';
+
 import 'pages/forget_password_page.dart';
 import 'pages/home_page.dart';
 import 'pages/sign_in_page.dart';
@@ -41,12 +43,13 @@ class MyApp extends ConsumerWidget {
 
           final isAuthenticated = snapshot.data ?? false;
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
-            theme: ThemeData(primarySwatch: Colors.green, fontFamily: "Ubuntu"),
-            home: TasksPage()
-            //  isAuthenticated ? const HomePage() : const SignInPage(),
-          );
+              debugShowCheckedModeBanner: false,
+              title: 'Flutter Demo',
+              theme:
+                  ThemeData(primarySwatch: Colors.green, fontFamily: "Ubuntu"),
+              home: CropPricePage()
+              //  isAuthenticated ? const HomePage() : const SignInPage(),
+              );
         });
   }
 }
