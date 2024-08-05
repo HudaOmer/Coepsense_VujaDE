@@ -43,6 +43,7 @@ class SettingsIconText extends StatelessWidget {
   final Color iconColor;
   final TextStyle textStyles;
   final double space;
+  final Function() onTap;
 
   const SettingsIconText(
       {super.key,
@@ -50,11 +51,14 @@ class SettingsIconText extends StatelessWidget {
       required this.text,
       required this.iconColor,
       required this.textStyles,
-      required this.space});
+      required this.space,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return GestureDetector(
+      onTap: onTap,
+       child:Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
@@ -63,6 +67,6 @@ class SettingsIconText extends StatelessWidget {
           Text(text, style: textStyles)
         ],
       ),
-    );
+    ));
   }
 }

@@ -21,7 +21,7 @@ IconMode calender = IconMode(mode: [
   'assets/images/icons/Calendar.png'
 ]);
 IconMode notifications = IconMode(
-    mode: ['assets/images/icons/Bell.png', 'assets/images/icons/Bell.png']);
+    mode: ['assets/images/icons/Bell_on.png', 'assets/images/icons/Bell.png']);
 IconMode profile = IconMode(mode: [
   'assets/images/icons/Setting_alt_fill.png',
   'assets/images/icons/Setting_alt_fill_selected.png'

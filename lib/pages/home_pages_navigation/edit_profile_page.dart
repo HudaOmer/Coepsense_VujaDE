@@ -31,17 +31,17 @@ class EditProfilePage extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             const TextFieldFormCustomized(
                 label: 'Name', hint: 'First Last', isObsecure: false),
-            const SizedBox(height: 30),
+            // const SizedBox(height: 30),
             const TextFieldFormCustomized(
                 label: 'Email Address',
                 hint: 'SomeOne@email.com',
                 isObsecure: false),
-            const SizedBox(height: 30),
+            // const SizedBox(height: 30),
             const TextFieldFormCustomized(
                 label: 'Password', hint: '********', isObsecure: true),
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             const SaveButton(),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
           ],
         ),
       ),

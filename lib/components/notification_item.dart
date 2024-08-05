@@ -32,13 +32,14 @@ class NotificationItem extends StatelessWidget {
                     SizedBox(width: MediaQuery.of(context).size.width * 0.3),
                   ],
                 ),
-                Padding(padding:
-                const EdgeInsets.all(10.0),
+                const Padding(
+                  padding: EdgeInsets.all(10.0),
                   child: Text(
                       'You have new weather update for the day You have new weather update for the day',
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: TextStyle(fontSize: 15, color: Colors.grey)),)
+                      style: TextStyle(fontSize: 15, color: Colors.grey)),
+                )
               ],
             )),
       ),

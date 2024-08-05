@@ -1,13 +1,4 @@
-import 'package:corpsense_vujade/pages/Crop_price_page.dart';
-
-import 'pages/forget_password_page.dart';
 import 'pages/home_page.dart';
-import 'pages/sign_in_page.dart';
-import 'pages/splash_screen.dart';
-import 'pages/welcome_page.dart';
-import 'pages/home_pages_navigation/edit_profile_page.dart';
-import 'pages/register_page.dart';
-import 'pages/tasks_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'provider/auth.dart';
@@ -41,13 +32,13 @@ class MyApp extends ConsumerWidget {
             );
           }
 
-          final isAuthenticated = snapshot.data ?? false;
+          // final isAuthenticated = snapshot.data ?? false;
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               theme:
                   ThemeData(primarySwatch: Colors.green, fontFamily: "Ubuntu"),
-              home: HomePage()
+              home: const HomePage()
               //  isAuthenticated ? const HomePage() : const SignInPage(),
               );
         });

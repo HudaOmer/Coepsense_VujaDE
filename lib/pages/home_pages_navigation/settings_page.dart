@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../utils/colors.dart';
 import '../../components/settings_element.dart';
 import '../../utils/data.dart';
+import 'notification_settings.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -9,6 +10,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
           title: const Center(
               child: Text('Settings      ',
@@ -28,25 +30,36 @@ class SettingsPage extends StatelessWidget {
                       space: 20,
                       text: 'Edit Profile',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.security,
                       space: 20,
                       text: 'Security',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.notifications_none,
                       space: 20,
                       text: 'Notification',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const NotificationSettings()),
+                        );
+                      }),
                   SettingsIconText(
                       icon: Icons.lock_outline,
                       space: 20,
                       text: 'Privacy',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                 ],
               ),
               SettingsElement(
@@ -57,19 +70,22 @@ class SettingsPage extends StatelessWidget {
                       space: 20,
                       text: 'My Subscription',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.help_outline_rounded,
                       space: 20,
                       text: 'Help & Support',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.language,
                       space: 20,
                       text: 'App Language',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle)
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {})
                 ],
               ),
               SettingsElement(
@@ -80,19 +96,22 @@ class SettingsPage extends StatelessWidget {
                       space: 20,
                       text: 'Report a Problem',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.group_add_outlined,
                       space: 20,
                       text: 'Add account',
                       iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle),
+                      textStyles: mediumBlackTextStyle,
+                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.login_outlined,
                       space: 20,
                       text: 'Log Out',
                       iconColor: mainColor,
-                      textStyles: boldMediumColoredTextStyle),
+                      textStyles: boldMediumColoredTextStyle,
+                      onTap: () {}),
                 ],
               ),
             ],
