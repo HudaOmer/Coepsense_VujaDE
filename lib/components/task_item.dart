@@ -88,19 +88,23 @@ class TaskProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-      const SizedBox(width: 100, child: Text('Completion Rate:', maxLines: 2)),
-      CircularPercentIndicator(
-        radius: 80.0,
-        lineWidth: 8.0,
-        percent: 0.75, // 75% complete
-        center: const Text(
-          "75%",
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        const SizedBox(
+            width: 100, child: Text('Completion Rate:', maxLines: 2)),
+        CircularPercentIndicator(
+          radius: 80.0,
+          lineWidth: 8.0,
+          percent: 0.75, // 75% complete
+          center: const Text(
+            "75%",
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+          ),
+          progressColor: mainColor,
+          backgroundColor: Colors.transparent,
         ),
-        progressColor: mainColor,
-        backgroundColor: Colors.transparent,
-      ),
-    ]);
+      ]),
+    );
   }
 }
