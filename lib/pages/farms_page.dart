@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/farm_item.dart';
-import 'farm/farm_detail.dart';
+import 'farm/farm_detail_page.dart';
 
 String title = 'List Of Farms      ';
 
