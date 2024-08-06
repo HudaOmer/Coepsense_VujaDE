@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../components/task_item.dart';
+import '../../components/time_range_item.dart';
 
 String title = 'List Of Farms      ';
 
@@ -19,9 +21,15 @@ class TasksPage extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            const Text('tasks')
+              children: const [
+            // SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            TimeRangeItem(isIncome: true),
+            TaskItem(isCompleted: true),
+            TaskItem(isCompleted: false),
+            TaskItem(isCompleted: false),
+            AddTask(),
+            TaskProgress(),
+            AddSuggestion(),
           ])),
     );
   }

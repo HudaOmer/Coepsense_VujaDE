@@ -5,6 +5,8 @@ import '../../components/home_page_components/weather_template.dart';
 import '../../utils/icons.dart';
 import 'package:flutter/material.dart';
 
+import 'tasks.dart';
+
 double appbarheight = 120;
 
 class Home extends StatelessWidget {
@@ -45,26 +47,32 @@ class Home extends StatelessWidget {
             const SizedBox(height: 20),
             const Center(child: SearchBar()),
             const SizedBox(height: 30),
-            Container(
-                height: 60,
-                width: MediaQuery.of(context).size.width * 0.9,
-                decoration: BoxDecoration(
-                    color: mainColor,
-                    borderRadius: BorderRadius.circular(15.0)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const SizedBox(width: 17.0),
-                    const Icon(Icons.library_books_outlined,
-                        size: 30, color: Colors.white),
-                    const SizedBox(width: 17.0),
-                    const Text('Tasks',
-                        style: TextStyle(fontSize: 15, color: Colors.white)),
-                    SizedBox(width: MediaQuery.of(context).size.width * 0.5),
-                    const Text('10',
-                        style: TextStyle(fontSize: 15, color: Colors.white)),
-                  ],
-                )),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const TasksPage()));
+              },
+              child: Container(
+                  height: 60,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                      color: mainColor,
+                      borderRadius: BorderRadius.circular(15.0)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const SizedBox(width: 17.0),
+                      const Icon(Icons.library_books_outlined,
+                          size: 30, color: Colors.white),
+                      const SizedBox(width: 17.0),
+                      const Text('Tasks',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.5),
+                      const Text('10',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                    ],
+                  )),
+            ),
             const SizedBox(height: 10),
             const WeatherTemplate(),
             const SizedBox(height: 10),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../pages/farm/crop_price_page.dart';
 import '../../utils/colors.dart';
+import 'income_and_expenses_page.dart';
 import 'soil_moisture_page.dart';
 
 String title = 'Farm 1      ';
@@ -54,7 +55,7 @@ class FarmDetailPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const SoilMoisturePage()),
+                      builder: (context) => const IncomeAndExpensesPage()),
                 );
               },
               child: Center(
@@ -65,7 +66,7 @@ class FarmDetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: mainColor,
                         borderRadius: BorderRadius.circular(15.0)),
-                    child: const Text('Soil Moisture',
+                    child: const Text('Income & Expenses',
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white))),
               ),

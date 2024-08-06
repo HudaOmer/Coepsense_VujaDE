@@ -17,7 +17,11 @@ class CropPricePage extends StatelessWidget {
                     Text(title, style: const TextStyle(color: Colors.black))),
             elevation: 0,
             backgroundColor: Colors.white,
-            leading: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+            leading: InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(Icons.arrow_back_ios, color: Colors.black))),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
