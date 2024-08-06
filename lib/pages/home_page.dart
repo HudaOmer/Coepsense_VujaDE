@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'home_pages_navigation/home.dart';
 import 'home_pages_navigation/notifications.dart';
 import 'home_pages_navigation/settings_page.dart';
-import '../archive/toggle_button.dart';
+import 'farms_page.dart';
 
 double iconSize = 35;
 
@@ -20,10 +20,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   List<Widget> pages = [
     const Home(),
-    const SwitchesPage(),
-
-    //Center(child: Text("Calender")),
-    // Center(child: Text("Notifications")),
+    const FarmsPage(),
     const Notifications(),
     const SettingsPage(),
   ];

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../components/crop_item.dart';
-import '../models/crop.dart';
+import '../../components/crop_item.dart';
+import '../../models/crop.dart';
 
 String title = 'Crop Prices       ';
 

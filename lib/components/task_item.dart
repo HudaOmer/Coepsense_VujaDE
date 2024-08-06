@@ -12,7 +12,6 @@ class TaskItem extends StatelessWidget {
       child: Container(
           padding: const EdgeInsets.all(5.0),
           height: 90,
-          // width: MediaQuery.of(context).size.width * 0.9,
           decoration: BoxDecoration(
               color: contrastColor, borderRadius: BorderRadius.circular(15.0)),
           child:

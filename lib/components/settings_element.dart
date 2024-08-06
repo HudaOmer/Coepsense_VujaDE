@@ -57,16 +57,16 @@ class SettingsIconText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-       child:Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Icon(icon, color: iconColor, size: 25),
-          SizedBox(width: space),
-          Text(text, style: textStyles)
-        ],
-      ),
-    ));
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Icon(icon, color: iconColor, size: 25),
+              SizedBox(width: space),
+              Text(text, style: textStyles)
+            ],
+          ),
+        ));
   }
 }

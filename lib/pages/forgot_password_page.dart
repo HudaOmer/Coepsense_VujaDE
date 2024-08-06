@@ -17,7 +17,11 @@ class ForgotPasswordPage extends StatelessWidget {
         iconTheme: IconThemeData(color: contrastColor),
         backgroundColor: Colors.white,
         title: const Text('Edit Profile'),
-        leading: const Icon(Icons.arrow_back_ios),
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back_ios)),
       ),
       body: SingleChildScrollView(
         child: Column(

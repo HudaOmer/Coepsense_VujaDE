@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import '../components/task_item.dart';
+import '../components/farm_item.dart';
+import 'farm/farm_detail.dart';
 
 String title = 'List Of Farms      ';
 
-class TasksPage extends StatelessWidget {
-  const TasksPage({super.key});
+class FarmsPage extends StatelessWidget {
+  const FarmsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,14 @@ class TasksPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            const TaskItem(),
-            const TaskItem(),
-            const TaskItem()
+            FarmItem(onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const FarmDetailPage()),
+              );
+            }),
+            FarmItem(onTap: () {}),
+            FarmItem(onTap: () {})
           ])),
     );
   }

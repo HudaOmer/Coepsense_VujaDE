@@ -5,6 +5,7 @@ import '../components/colored_button.dart';
 import '../utils/colors.dart';
 import '../components/text_button_customized.dart';
 import '../components/text_field_customized.dart';
+import 'forgot_password_page.dart';
 import 'home_page.dart';
 
 class SignInPage extends ConsumerStatefulWidget {
@@ -90,7 +91,15 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                   validator: (value) =>
                       value!.isEmpty ? 'Please Enter a password' : null),
               const SizedBox(height: 10),
-              TextButtonCustomized(text: 'Forgot Password?', onPressed: () {}),
+              TextButtonCustomized(
+                  text: 'Forgot Password?',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordPage()),
+                    );
+                  }),
               SizedBox(height: MediaQuery.of(context).size.height * 0.15),
               ColoredButton(
                   color: mainColor,
