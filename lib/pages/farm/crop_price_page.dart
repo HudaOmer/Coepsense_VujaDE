@@ -1,3 +1,4 @@
+import 'package:corpsense_vujade/components/home_page_components/search_bar.dart';
 import 'package:flutter/material.dart';
 import '../../components/crop_item.dart';
 import '../../models/crop.dart';
@@ -28,6 +29,8 @@ class CropPricePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+              const SearchBar(),
+              const SizedBox(height: 30),
               const CropItem(
                 crop: Crop(
                     date: 'Sun, Jul 28',
