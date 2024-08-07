@@ -1,4 +1,4 @@
-import 'pages/home_page.dart';
+import 'package:corpsense_vujade/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'provider/auth.dart';
@@ -38,7 +38,7 @@ class MyApp extends ConsumerWidget {
               title: 'Flutter Demo',
               theme:
                   ThemeData(primarySwatch: Colors.green, fontFamily: "Ubuntu"),
-              home: const HomePage()
+              home: const SplashScreen()
               //  isAuthenticated ? const HomePage() : const SignInPage(),
               );
         });

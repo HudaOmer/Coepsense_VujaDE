@@ -27,16 +27,16 @@ class ForgotPasswordPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             IconCustomized(height: 100, iconName: lock),
             const SizedBox(height: 20),
             Center(
                 child: Text('Forgot Password',
                     style: TextStyle(fontSize: 20, color: contrastColor))),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             const TextFieldFormCustomized(
                 label: 'Password', hint: '********', isObsecure: true),
-            const SizedBox(height: 30),
+            const SizedBox(height: 10),
             const TextFieldFormCustomized(
                 label: 'Re-Write Password', hint: '********', isObsecure: true),
             SizedBox(height: MediaQuery.of(context).size.height * 0.15),

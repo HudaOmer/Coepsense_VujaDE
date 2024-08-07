@@ -8,25 +8,24 @@ final authProvider = Provider<AuthService>((ref) {
 });
 
 class AuthService {
-  final String _baseUrl = 'http://localhost:8000/api/auth';
+  final String _baseUrl = 'http://192.168.100.73:8000/api/auth';
   static const _tokenKey = 'auth_token';
 
   // Register method
-  Future<String?> register(String name, String email, String phone, String type, String password,
-      String passwordConfirmation) async {
-    final response = await http.post(
-      Uri.parse('$_baseUrl/register'),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'name': name,
-        'email': email,
-        'phone': phone,
-        'type': type,
-        'password': password,
-        'password_confirmation': passwordConfirmation,
-      })
-    );
+  Future<String?> register(String name, String email, String phone, String type,
+      String password, String passwordConfirmation) async {
+    final response = await http.post(Uri.parse('$_baseUrl/register'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'name': name,
+          'email': email,
+          'phone': phone,
+          'type': type,
+          'password': password,
+          'password_confirmation': passwordConfirmation,
+        }));
 
+    print(response.statusCode);
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       final token = data['token'];
@@ -38,18 +37,24 @@ class AuthService {
   }
 
   Future<String?> login(String email, String password) async {
-    final response = await http.post(
-      Uri.parse('$_baseUrl/login'),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'email': email, 'password': password}),
-    );
+    try {
+      final response = await http.post(
+        Uri.parse('$_baseUrl/login'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'email': email, 'password': password}),
+      );
 
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      final token = data['token'];
-      await _saveToken(token);
-      return token;
-    } else {
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        final token = data['token'];
+        await _saveToken(token);
+        return token;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      print('An error occurred: $e');
       return null;
     }
   }
