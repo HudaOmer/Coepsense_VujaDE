@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/components/income_item.dart';
+import '../../components/income_item.dart';
 import 'package:flutter/material.dart';
 import '../../components/time_range_item.dart';
 import '../../components/transaction_item.dart';

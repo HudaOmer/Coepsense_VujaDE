@@ -1,6 +1,5 @@
-import 'package:corpsense_vujade/components/home_page_components/colored_bar_chart.dart';
+import '../../components/home_page_components/colored_bar_chart.dart';
 import 'package:flutter/material.dart';
-
 import '../../components/today_weather_template.dart';
 import '../../utils/colors.dart';
 

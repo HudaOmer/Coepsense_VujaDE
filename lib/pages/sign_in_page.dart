@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/provider/auth.dart';
+import '../provider/auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import '../components/colored_button.dart';

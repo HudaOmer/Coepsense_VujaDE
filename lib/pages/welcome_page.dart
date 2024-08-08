@@ -1,7 +1,6 @@
 import '../components/colored_button.dart';
 import '../components/logo.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/colors.dart';
 import 'register_page.dart';
 import 'sign_in_page.dart';

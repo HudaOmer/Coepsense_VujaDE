@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/pages/splash_screen.dart';
+import 'pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'provider/auth.dart';

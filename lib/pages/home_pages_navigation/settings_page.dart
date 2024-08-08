@@ -1,14 +1,17 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import '../../pages/welcome_page.dart';
+import '../../provider/auth.dart';
 import '../../utils/colors.dart';
 import '../../components/settings_element.dart';
 import '../../utils/data.dart';
 import 'notification_settings.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -111,7 +114,15 @@ class SettingsPage extends StatelessWidget {
                       text: 'Log Out',
                       iconColor: mainColor,
                       textStyles: boldMediumColoredTextStyle,
-                      onTap: () {}),
+                      onTap: () async {
+                        final authService = ref.read(authProvider);
+                        await authService.logout();
+                        print('Success, logged out');
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const WelcomePage()));
+                      }),
                 ],
               ),
             ],

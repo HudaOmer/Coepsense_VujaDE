@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/utils/colors.dart';
+import '../utils/colors.dart';
 import 'package:flutter/material.dart';
 import '../cache/notification_settings_cache.dart';
 
@@ -11,7 +11,7 @@ class CustomSwitch extends StatefulWidget {
   });
 
   @override
-  _CustomSwitchState createState() => _CustomSwitchState();
+  State<CustomSwitch> createState() => _CustomSwitchState();
 }
 
 class _CustomSwitchState extends State<CustomSwitch> {

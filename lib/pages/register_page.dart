@@ -1,11 +1,9 @@
-import 'package:corpsense_vujade/pages/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:flutter/material.dart';
 import '../components/colored_button.dart';
 import '../components/text_field_customized.dart';
-import 'package:flutter/material.dart';
-
-import '../provider/auth.dart';
+// import '../provider/auth.dart';
+// import 'home_page.dart';
 
 class RegisterPage extends ConsumerStatefulWidget {
   const RegisterPage({super.key});
@@ -17,13 +15,12 @@ class RegisterPage extends ConsumerStatefulWidget {
 class _RegisterPageState extends ConsumerState<RegisterPage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
-  final _phoneController = TextEditingController(); // Added phone controller
-  final _typeController = TextEditingController(); // Added type controller
+  final _phoneController = TextEditingController();
+  final _typeController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _passwordConfirmationController =
-      TextEditingController(); // Added password confirmation controller
-  bool _isLoading = false;
-  String? _errorMessage;
+  final _passwordConfirmationController = TextEditingController();
+  // bool _isLoading = false;
+  // String? _errorMessage;
 
   @override
   void dispose() {
@@ -32,42 +29,41 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
     _phoneController.dispose(); // Dispose of the phone controller
     _typeController.dispose(); // Dispose of the type controller
     _passwordController.dispose();
-    _passwordConfirmationController
-        .dispose(); // Dispose of the password confirmation controller
+    _passwordConfirmationController.dispose();
     super.dispose();
   }
 
-  Future<void> _register() async {
-    setState(() {
-      _isLoading = true;
-      _errorMessage = null;
-    });
+// Musab said ignore for now
+  // Future<void> _register() async {
+  //   setState(() {
+  //     _isLoading = true;
+  //     _errorMessage = null;
+  //   });
 
-    final authService = ref.read(authProvider);
+  //   final authService = ref.read(authProvider);
 
-    final token = await authService.register(
-      _nameController.text,
-      _emailController.text,
-      _phoneController.text,
-      _typeController.text,
-      _passwordController.text,
-      _passwordConfirmationController.text,
-    );
+  //   final token = await authService.register(
+  //     _nameController.text,
+  //     _emailController.text,
+  //     _phoneController.text,
+  //     _typeController.text,
+  //     _passwordController.text,
+  //     _passwordConfirmationController.text,
+  //   );
 
-    if (token != null) {
-      // Handle successful registration, e.g., navigate to another page
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const HomePage()));
-    } else {
-      setState(() {
-        _errorMessage = 'Registration failed. Please try again.';
-      });
-    }
+  //   if (token != null) {
+  //     // Handle successful registration, e.g., navigate to another page
+  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomePage()));
+  //   } else {
+  //     setState(() {
+  //       _errorMessage = 'Registration failed. Please try again.';
+  //     });
+  //   }
 
-    setState(() {
-      _isLoading = false;
-    });
-  }
+  //   setState(() {
+  //     _isLoading = false;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

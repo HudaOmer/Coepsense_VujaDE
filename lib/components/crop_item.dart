@@ -1,4 +1,4 @@
-import 'package:corpsense_vujade/utils/colors.dart';
+import '../utils/colors.dart';
 import 'package:flutter/material.dart';
 import '../models/crop.dart';
 import '../utils/icons.dart';

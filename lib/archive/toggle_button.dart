@@ -6,7 +6,7 @@ class SwitchesPage extends StatefulWidget {
   const SwitchesPage({super.key});
 
   @override
-  _SwitchesPageState createState() => _SwitchesPageState();
+  State<SwitchesPage> createState() => _SwitchesPageState();
 }
 
 class _SwitchesPageState extends State<SwitchesPage> {
