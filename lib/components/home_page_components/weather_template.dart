@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../provider/weather_provider.dart';
 import '../../utils/colors.dart';
 
 const Color textColor = Colors.white;
 
-class WeatherTemplate extends StatelessWidget {
+class WeatherTemplate extends ConsumerWidget {
   const WeatherTemplate({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final weatherAsyncValue = ref.watch(weatherProvider);
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: ClipRRect(
@@ -15,49 +18,55 @@ class WeatherTemplate extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(20.0),
           color: contrastColor,
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Text('Weather',
-                      style: TextStyle(fontSize: 20, color: textColor)),
-                  SizedBox(width: MediaQuery.of(context).size.width * 0.15),
-                  Row(
+          child: weatherAsyncValue.when(
+            data: (weather) {
+              return Column(children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const Text('Weather',
+                        style: TextStyle(fontSize: 20, color: textColor)),
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.15),
+                    Row(
+                      children: [
+                        const Icon(Icons.cloud, size: 60, color: textColor),
+                        const SizedBox(width: 10),
+                        Text(weather.temperature,
+                            style:
+                                const TextStyle(fontSize: 25, color: textColor))
+                      ],
+                    )
+                  ],
+                ),
+                const SizedBox(height: 15.0),
+                Container(height: 1, color: mainColor),
+                const SizedBox(height: 15.0),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      WeatherState(
+                          icon: Icons.thermostat, text: weather.temperature),
+                      WeatherState(
+                          icon: Icons.water_drop_outlined,
+                          text: weather.humidity),
+                      WeatherState(icon: Icons.air, text: weather.windSpeed),
+                      WeatherState(icon: Icons.cloud, text: weather.moisture),
+                    ]),
+                const SizedBox(height: 50),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
-                      Icon(Icons.cloud, size: 60, color: textColor),
-                      SizedBox(width: 10),
-                      Text('19 C',
-                          style: TextStyle(fontSize: 25, color: textColor))
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(height: 15.0),
-              Container(height: 1, color: mainColor),
-              const SizedBox(height: 15.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  WeatherState(icon: Icons.thermostat, text: '19 C'),
-                  WeatherState(icon: Icons.water_drop_outlined, text: '98%'),
-                  WeatherState(icon: Icons.air, text: '6 m/s'),
-                  WeatherState(icon: Icons.cloud, text: '0 mm'),
-                ],
-              ),
-              const SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('5:25 AM', style: TextStyle(color: textColor)),
-                  SizedBox(width: 30),
-                  Icon(Icons.sunny_snowing, color: textColor),
-                  SizedBox(width: 30),
-                  Text('8:25 PM', style: TextStyle(color: textColor))
-                ],
-              ),
-              const SizedBox(height: 20),
-            ],
+                      Text('5:25 AM', style: TextStyle(color: textColor)),
+                      SizedBox(width: 30),
+                      Icon(Icons.sunny_snowing, color: textColor),
+                      SizedBox(width: 30),
+                      Text('8:25 PM', style: TextStyle(color: textColor))
+                    ]),
+                const SizedBox(height: 20),
+              ]);
+            },
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (error, stackTrace) => Center(child: Text('Error: $error')),
           ),
         ),
       ),
