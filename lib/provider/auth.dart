@@ -8,7 +8,7 @@ final authProvider = Provider<AuthService>((ref) {
 });
 
 class AuthService {
-  final String _baseUrl = 'http://192.168.100.73:8000/api/auth';
+  final String _baseUrl = 'http://192.168.100.77:8000/api/auth';
   static const _tokenKey = 'auth_token';
 
   // Register method

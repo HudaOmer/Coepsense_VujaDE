@@ -20,25 +20,34 @@ class Home extends StatelessWidget {
         toolbarHeight: appbarheight,
         iconTheme: IconThemeData(color: contrastColor),
         backgroundColor: Colors.white,
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Good Morning!',
-                style: TextStyle(
-                    color: mainColor,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300)),
-            const SizedBox(height: 5),
-            Text('Huda',
-                style: TextStyle(
-                    color: contrastColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w300)),
-            const SizedBox(height: 5),
-          ],
+        title: Padding(
+          padding:
+              EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.02),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Good Morning!',
+                  style: TextStyle(
+                      color: mainColor,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w300)),
+              const SizedBox(height: 5),
+              Text('Huda',
+                  style: TextStyle(
+                      color: contrastColor,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w300)),
+              const SizedBox(height: 5),
+            ],
+          ),
         ),
-        actions: [Image.asset(notified, height: 25)],
+        actions: [
+          Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.02),
+              child: Image.asset(notified, height: 25))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

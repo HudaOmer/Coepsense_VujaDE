@@ -1,4 +1,4 @@
-import '../../components/home_page_components/colored_bar_chart.dart';
+import '../../components/home_page_components/colored_bar_chart_double.dart';
 import 'package:flutter/material.dart';
 import '../../components/today_weather_template.dart';
 import '../../utils/colors.dart';
@@ -31,9 +31,12 @@ class SoilMoisturePage extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.all(15.0),
                 child: Text('Farm 1', textAlign: TextAlign.center)),
-            ColoredBarChart(
-                weeklySummery: const [1000, 600, 1500, 250, 1700, 1200, 650],
-                barColor: mainColor),
+            ColoredBarChartDouble(
+                firstWeeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                secondWeeklySummary: const [80, 10, 30, 20, 40, 80, 30],
+                firstBarColor: contrastColor,
+                secondBarColor: mainColor),
+            const WeeklySummaryChart(),
             Padding(
               padding: EdgeInsets.only(
                   left: MediaQuery.of(context).size.width * 0.1,
