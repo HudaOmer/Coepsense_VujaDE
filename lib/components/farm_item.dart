@@ -4,7 +4,8 @@ import '../utils/icons.dart';
 
 class FarmItem extends StatelessWidget {
   final void Function() onTap;
-  const FarmItem({super.key, required this.onTap});
+  final String name;
+  const FarmItem({super.key, required this.onTap, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class FarmItem extends StatelessWidget {
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(15.0),
                           child: Image.asset(farmer, height: 70.0))),
-                  const Text('Farm one', style: TextStyle(color: Colors.white)),
+                  Text(name, style: const TextStyle(color: Colors.white)),
                   SizedBox(width: MediaQuery.of(context).size.width * 0.3),
                   Icon(Icons.arrow_forward_ios, color: mainColor),
                 ])),

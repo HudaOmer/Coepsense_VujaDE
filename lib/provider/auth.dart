@@ -64,7 +64,7 @@ class AuthService {
   }
 
   Future<bool> get isAuthenticated async {
-    final token = await _getToken();
+    final token = await getToken();
     return token != null;
   }
 
@@ -73,7 +73,7 @@ class AuthService {
     await prefs.setString(_tokenKey, token);
   }
 
-  Future<String?> _getToken() async {
+  Future<String?> getToken() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(_tokenKey);
   }

@@ -23,14 +23,17 @@ class FarmsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            FarmItem(onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const FarmDetailPage()),
-              );
-            }),
-            FarmItem(onTap: () {}),
-            FarmItem(onTap: () {})
+            FarmItem(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FarmDetailPage()),
+                  );
+                },
+                name: 'Farm one'),
+            FarmItem(onTap: () {}, name: 'Farm one'),
+            FarmItem(onTap: () {}, name: 'Farm one')
           ])),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../pages/farm/crop_price_page.dart';
+import '../../components/farm_item.dart';
 import '../../provider/farm_provider.dart';
 import '../../utils/colors.dart';
 import 'income_and_expenses_page.dart';
@@ -69,6 +70,7 @@ class FarmDetailPage extends ConsumerWidget {
                               Text("Description: ${farm.description}"),
                               Text("Date of creation: ${farm.createdAt}"),
                               Text("Date of update: ${farm.updatedAt}"),
+                              FarmItem(onTap: () {}, name: farm.name),
                             ],
                           ),
                           isThreeLine: true,
