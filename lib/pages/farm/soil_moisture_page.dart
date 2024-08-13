@@ -1,4 +1,4 @@
-import '../../components/home_page_components/colored_bar_chart_double.dart';
+import '../../components/home_page_components/colored_bar_chart.dart';
 import 'package:flutter/material.dart';
 import '../../components/today_weather_template.dart';
 import '../../utils/colors.dart';
@@ -6,7 +6,8 @@ import '../../utils/colors.dart';
 String title = 'Soil Moisture      ';
 
 class SoilMoisturePage extends StatelessWidget {
-  const SoilMoisturePage({super.key});
+  final int farmId;
+  const SoilMoisturePage({super.key, required this.farmId});
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +29,33 @@ class SoilMoisturePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            const Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text('Farm 1', textAlign: TextAlign.center)),
-            ColoredBarChartDouble(
-                firstWeeklySummary: const [50, 90, 50, 30, 25, 40, 35],
-                secondWeeklySummary: const [80, 10, 30, 20, 40, 80, 30],
-                firstBarColor: contrastColor,
-                secondBarColor: mainColor),
-            const WeeklySummaryChart(),
+
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ColoredBarChart(
+                    weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                    barColor: mainColor)),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ColoredBarChart(
+                    weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                    barColor: mainColor)),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ColoredBarChart(
+                    weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                    barColor: mainColor)),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ColoredBarChart(
+                    weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                    barColor: mainColor)),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ColoredBarChart(
+                    weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                    barColor: mainColor)),
+            // const WeeklySummaryChart(),
             Padding(
               padding: EdgeInsets.only(
                   left: MediaQuery.of(context).size.width * 0.1,

@@ -4,58 +4,69 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class ColoredBarChart extends StatelessWidget {
-  final List<double> weeklySummery;
+  final List<double> weeklySummary;
   final Color barColor;
   const ColoredBarChart(
-      {super.key, required this.weeklySummery, required this.barColor});
+      {super.key, required this.weeklySummary, required this.barColor});
 
   @override
   Widget build(BuildContext context) {
     MyBarData myBarData = MyBarData(
-        sunAmount: weeklySummery[0],
-        monAmount: weeklySummery[1],
-        tueAmount: weeklySummery[2],
-        wedAmount: weeklySummery[3],
-        thuAmount: weeklySummery[4],
-        friAmount: weeklySummery[5],
-        satAmount: weeklySummery[6]);
+        sunAmount: weeklySummary[0],
+        monAmount: weeklySummary[1],
+        tueAmount: weeklySummary[2],
+        wedAmount: weeklySummary[3],
+        thuAmount: weeklySummary[4],
+        friAmount: weeklySummary[5],
+        satAmount: weeklySummary[6]);
 
     myBarData.initializeBarData();
-    return Container(
-      padding: const EdgeInsets.fromLTRB(30.0, 5, 10, 5),
-      height: 300,
-      child: BarChart(BarChartData(
-        maxY: 2000,
-        minY: 0,
-        gridData: FlGridData(show: false),
-        borderData: FlBorderData(show: false),
-        titlesData: FlTitlesData(
-          rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          bottomTitles: AxisTitles(
-              sideTitles: SideTitles(
-                  showTitles: true, getTitlesWidget: getBottomTitles)),
-          // leftTitles: AxisTitles(
-          //     sideTitles: SideTitles(
-          //   showTitles: true,
-          //   getTitlesWidget: (value, meta) => Text(
-          //     value.toInt().toString(),
-          //     style: const TextStyle(fontSize: 8),
-          //     maxLines: 1,
-          //   ),
-          // )),
+    return Column(
+      children: [
+        Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(color: mainColor, height: 15.0, width: 15.0),
+                const SizedBox(width: 8.0),
+                const Text('Temperature', textAlign: TextAlign.center),
+              ],
+            )),
+        Container(
+          padding: const EdgeInsets.fromLTRB(30.0, 5, 10, 5),
+          height: 300,
+          child: BarChart(BarChartData(
+            maxY: 100,
+            minY: 0,
+            gridData: FlGridData(show: false),
+            borderData: FlBorderData(show: false),
+            titlesData: FlTitlesData(
+              rightTitles:
+                  AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              bottomTitles: AxisTitles(
+                  sideTitles: SideTitles(
+                      showTitles: true, getTitlesWidget: getBottomTitles)),
+              leftTitles: AxisTitles(
+                  sideTitles: SideTitles(
+                      showTitles: true,
+                      reservedSize: 40,
+                      getTitlesWidget: getLeftTitles)),
+            ),
+            backgroundColor: greyColor,
+            barGroups: myBarData.barData
+                .map((data) => BarChartGroupData(x: data.x, barRods: [
+                      BarChartRodData(
+                          toY: data.y,
+                          color: barColor,
+                          width: 10.0,
+                          borderRadius: BorderRadius.circular(40.0))
+                    ]))
+                .toList(),
+          )),
         ),
-        backgroundColor: greyColor,
-        barGroups: myBarData.barData
-            .map((data) => BarChartGroupData(x: data.x, barRods: [
-                  BarChartRodData(
-                      toY: data.y,
-                      color: barColor,
-                      width: 10.0,
-                      borderRadius: BorderRadius.circular(40.0))
-                ]))
-            .toList(),
-      )),
+      ],
     );
   }
 }
@@ -68,5 +79,15 @@ Widget getBottomTitles(double value, TitleMeta meta) {
       child: Text(
         weekdays[value.toInt()],
         style: const TextStyle(fontSize: 10),
+      ));
+}
+
+Widget getLeftTitles(double value, TitleMeta meta) {
+  return SideTitleWidget(
+      axisSide: meta.axisSide,
+      child: Text(
+        value.toInt().toString(),
+        style: const TextStyle(fontSize: 8),
+        maxLines: 1,
       ));
 }

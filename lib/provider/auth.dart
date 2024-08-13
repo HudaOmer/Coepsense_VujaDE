@@ -2,13 +2,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../utils/apis.dart';
 
 final authProvider = Provider<AuthService>((ref) {
   return AuthService();
 });
 
 class AuthService {
-  final String _baseUrl = 'http://192.168.100.77:8000/api/auth';
+  final String _baseUrl = '$baseURL/api/auth';
   static const _tokenKey = 'auth_token';
 
   // Register method

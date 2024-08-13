@@ -2,10 +2,10 @@ import '../utils/colors.dart';
 import '../components/icon_customized.dart';
 import '../utils/icons.dart';
 import 'package:flutter/material.dart';
+import 'farm/test.dart';
 import 'home_pages_navigation/home.dart';
 import 'home_pages_navigation/notifications.dart';
 import 'home_pages_navigation/settings_page.dart';
-import 'farms_page.dart';
 
 double iconSize = 35;
 
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   List<Widget> pages = [
     const Home(),
-    const FarmsPage(),
+    const TestPage(),
     const Notifications(),
     const SettingsPage(),
   ];

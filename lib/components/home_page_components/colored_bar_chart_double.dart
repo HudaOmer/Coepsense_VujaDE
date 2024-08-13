@@ -135,13 +135,13 @@ class MyBarData {
         barRods: [
           BarChartRodData(
             toY: firstDataSet[index],
-            color: Colors.blue, // Adjust color if needed
+            // color: Colors.blue, // Adjust color if needed
             width: 10.0,
             borderRadius: BorderRadius.circular(40.0),
           ),
           BarChartRodData(
             toY: secondDataSet[index],
-            color: Colors.red, // Adjust color if needed
+            // color: Colors.red, // Adjust color if needed
             width: 10.0,
             borderRadius: BorderRadius.circular(40.0),
           ),

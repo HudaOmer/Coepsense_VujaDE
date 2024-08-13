@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../pages/farm/crop_price_page.dart';
-import '../../components/farm_item.dart';
-import '../../provider/farm_provider.dart';
-import '../../utils/colors.dart';
-import 'income_and_expenses_page.dart';
-import 'soil_moisture_page.dart';
+import '../../pages/farm/crop_price_page.dart';
+import '../provider/farm_provider.dart';
+import '../utils/colors.dart';
+import '../pages/farm/income_and_expenses_page.dart';
+import '../pages/farm/soil_moisture_page.dart';
 
 String title = 'Farm 1      ';
 
@@ -39,7 +38,7 @@ class FarmDetailPage extends ConsumerWidget {
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             _buildNavigationButton(
-                context, 'Soil Moisture', const SoilMoisturePage()),
+                context, 'Soil Moisture', const SoilMoisturePage(farmId: 0)),
             _buildNavigationButton(
                 context, 'Income & Expenses', const IncomeAndExpensesPage()),
             _buildNavigationButton(
@@ -70,7 +69,7 @@ class FarmDetailPage extends ConsumerWidget {
                               Text("Description: ${farm.description}"),
                               Text("Date of creation: ${farm.createdAt}"),
                               Text("Date of update: ${farm.updatedAt}"),
-                              FarmItem(onTap: () {}, name: farm.name),
+                              // FarmItem(onTap: () {}, name: farm.name),
                             ],
                           ),
                           isThreeLine: true,

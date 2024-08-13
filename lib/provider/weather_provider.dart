@@ -2,10 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../models/wather_state.dart';
-
-const String weatherApiKey = '3c1a9e6c0db24174b0885735242702';
-const String weatherApiBaseUrl = 'https://api.weatherapi.com/v1/forecast.json';
-const String location = 'Muscat';
+import '../utils/apis.dart';
 
 // Define the provider for weather data
 final weatherProvider = FutureProvider<WeatherStateData>((ref) async {

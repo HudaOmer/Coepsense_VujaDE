@@ -17,7 +17,7 @@ IconMode home = IconMode(mode: [
   'assets/images/icons/Home.png'
 ]);
 IconMode calender = IconMode(mode: [
-  'assets/images/icons/Calendar.png',
+  'assets/images/icons/Calendar_on.png',
   'assets/images/icons/Calendar.png'
 ]);
 IconMode notifications = IconMode(
