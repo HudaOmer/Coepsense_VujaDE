@@ -37,23 +37,22 @@ class TestPage extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                 SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.4,
-                    child: ListView.builder(
-                        itemCount: farms.length,
-                        itemBuilder: (context, index) {
-                          final farm = farms[index];
-                          return FarmItem(
-                              name: farm.name,
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          SoilMoisturePage(farmId: farm.id)),
-                                );
-                              });
-                        }))
+                Column(
+                  children: farms.map((farm) {
+                    return FarmItem(
+                      name: farm.name,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                SoilMoisturePage(farmId: farm.id),
+                          ),
+                        );
+                      },
+                    );
+                  }).toList(),
+                )
               ]));
         },
         loading: () => const Center(child: CircularProgressIndicator()),

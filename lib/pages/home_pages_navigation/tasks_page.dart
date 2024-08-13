@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../components/task_item.dart';
 import '../../components/time_range_item.dart';
+import '../../models/task.dart';
 
 String title = 'Tasks      ';
 
 class TasksPage extends StatelessWidget {
-  const TasksPage({super.key});
+  final List<Task> tasks;
+  const TasksPage({super.key, required this.tasks});
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +27,13 @@ class TasksPage extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
+              children: [
             // SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            TimeRangeItem(isIncome: true),
-            TaskItem(isCompleted: true),
-            TaskItem(isCompleted: false),
-            TaskItem(isCompleted: false),
-            AddTask(),
-            TaskProgress(),
-            AddSuggestion(),
+            const TimeRangeItem(isIncome: true),
+            ...tasks.map((task) => TaskItem(task: task)).toList(),
+            const AddTask(),
+            const TaskProgress(),
+            const AddSuggestion(),
           ])),
     );
   }

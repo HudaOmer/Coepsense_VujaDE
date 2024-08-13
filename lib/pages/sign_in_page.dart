@@ -6,7 +6,7 @@ import '../utils/colors.dart';
 import '../components/text_button_customized.dart';
 import '../components/text_field_customized.dart';
 import 'forgot_password_page.dart';
-import 'home_page.dart';
+import 'home_navigation_page.dart';
 
 class SignInPage extends ConsumerStatefulWidget {
   const SignInPage({super.key});
@@ -32,7 +32,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
       // Navigate to the HomeScreen
       print("success");
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        MaterialPageRoute(builder: (context) => const HomeNavigatorPage()),
       );
     } else {
       // Show error message

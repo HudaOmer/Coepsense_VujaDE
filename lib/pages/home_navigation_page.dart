@@ -3,23 +3,23 @@ import '../components/icon_customized.dart';
 import '../utils/icons.dart';
 import 'package:flutter/material.dart';
 import 'farm/test.dart';
-import 'home_pages_navigation/home.dart';
+import 'home_pages_navigation/home_page.dart';
 import 'home_pages_navigation/notifications.dart';
 import 'home_pages_navigation/settings_page.dart';
 
 double iconSize = 35;
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeNavigatorPage extends StatefulWidget {
+  const HomeNavigatorPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeNavigatorPage> createState() => _HomeNavigatorPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeNavigatorPageState extends State<HomeNavigatorPage> {
   int currentIndex = 0;
   List<Widget> pages = [
-    const Home(),
+    const HomePage(),
     const TestPage(),
     const Notifications(),
     const SettingsPage(),

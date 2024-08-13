@@ -4,7 +4,7 @@ import '../provider/auth.dart';
 import '../utils/icons.dart';
 import '../components/logo_white.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'home_navigation_page.dart';
 import 'welcome_page.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
@@ -30,7 +30,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
         context,
         MaterialPageRoute(
           builder: (context) =>
-              isLoggedIn ? const HomePage() : const WelcomePage(),
+              isLoggedIn ? HomeNavigatorPage() : const WelcomePage(),
         ),
       );
     });
