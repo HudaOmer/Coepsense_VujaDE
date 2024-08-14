@@ -37,8 +37,8 @@ class FarmDetailPage extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            _buildNavigationButton(
-                context, 'Soil Moisture', const SoilMoisturePage(farmId: 0)),
+            _buildNavigationButton(context, 'Soil Moisture',
+                const SoilMoisturePage(farmId: 0, farmName: 'name')),
             _buildNavigationButton(
                 context, 'Income & Expenses', const IncomeAndExpensesPage()),
             _buildNavigationButton(
