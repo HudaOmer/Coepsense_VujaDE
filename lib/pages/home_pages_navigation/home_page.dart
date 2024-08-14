@@ -27,7 +27,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext contex) {
-    final tasksAsyncValue = ref.watch(fetchTasksProvider);
+    final tasksAsyncValue = ref.refresh(fetchTasksProvider);
 
     return Scaffold(
       backgroundColor: Colors.white,

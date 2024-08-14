@@ -11,6 +11,7 @@ final authProvider = Provider<AuthService>((ref) {
 class AuthService {
   final String _baseUrl = '$baseURL/api/auth';
   static const _tokenKey = 'auth_token';
+  static const _groupId = 'farm_group_Id';
 
   // Register method
   Future<String?> register(String name, String email, String phone, String type,
@@ -30,7 +31,9 @@ class AuthService {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       final token = data['token'];
+      final groupID = data['user']['farm_group_id'];
       await _saveToken(token);
+      await _saveGroupId(groupID);
       return token;
     } else {
       return null;
@@ -74,9 +77,19 @@ class AuthService {
     await prefs.setString(_tokenKey, token);
   }
 
+  Future<void> _saveGroupId(int groupId) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(_groupId, groupId);
+  }
+
   Future<String?> getToken() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(_tokenKey);
+  }
+
+  static Future<int?> getGroupId() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(_groupId);
   }
 
   Future<void> _clearToken() async {

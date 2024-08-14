@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../components/task_item.dart';
 import '../../components/time_range_item.dart';
 import '../../models/task.dart';
+import 'create_task.dart';
 
 String title = 'Tasks      ';
 
@@ -28,10 +29,18 @@ class TasksPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-            // SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             const TimeRangeItem(isIncome: true),
             ...tasks.map((task) => TaskItem(task: task)).toList(),
-            const AddTask(),
+            InkWell(
+              child: const AddTask(),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CreateTaskPage()));
+              },
+            ),
             const TaskProgress(),
             const AddSuggestion(),
           ])),

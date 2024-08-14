@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import '../models/task.dart';
-import '../pages/home_pages_navigation/home_page.dart';
+import '../pages/home_pages_navigation/tasks_page.dart';
 import '../utils/colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../provider/tasks_provider.dart';
@@ -15,7 +15,7 @@ class TaskItem extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     bool isCompleted = task.status == 1;
 
-    void _showStatusMenu() async {
+    Future<void> showStatusMenu() async {
       final int? newStatus = await showDialog<int>(
         context: context,
         builder: (context) => AlertDialog(
@@ -45,16 +45,28 @@ class TaskItem extends ConsumerWidget {
       );
 
       if (newStatus != null) {
-        // Trigger the status update
-        ref.read(updateTaskStatusProvider({
-          'taskId': task.id.toString(),
-          'status': newStatus,
-        }).future);
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HomePage(),
-          ),
+        // Show loading indicator while updating status
+        final statusUpdateProvider = FutureProvider<void>((ref) async {
+          final taskService = ref.read(taskServiceProvider);
+          await taskService.updateStatus(task.id.toString(), newStatus);
+        });
+
+        // Start the status update and wait for completion
+        await ref.read(statusUpdateProvider.future);
+        Future.delayed(const Duration(seconds: 10));
+        // Refresh the tasks provider to get the updated list
+        final updatedTasksAsyncValue = ref.refresh(fetchTasksProvider);
+
+        // Navigate to the TasksPage with updated tasks
+        updatedTasksAsyncValue.when(
+          data: (tasks) {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => TasksPage(tasks: tasks)));
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (error, stackTrace) => Center(child: Text('Error: $error')),
         );
       }
     }
@@ -76,11 +88,11 @@ class TaskItem extends ConsumerWidget {
               size: 25,
               color: isCompleted ? mainColor : Colors.grey,
             ),
-            const SizedBox(width: 20.0),
+            const SizedBox(width: 10.0),
             Text('${task.title} (${task.id})'),
-            const SizedBox(width: 20.0),
+            const SizedBox(width: 10.0),
             GestureDetector(
-              onTap: _showStatusMenu,
+              onTap: showStatusMenu,
               child: Text(
                 task.status == 1 ? 'Idle' : 'Processing',
               ),

@@ -1,24 +1,24 @@
 class Task {
-  final int id;
+  final int? id;
   final int? farmGroupId;
   final String title;
   final String? description;
   final DateTime? dueDate;
   final int status;
   final int? assignedToId;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   Task({
-    required this.id,
+    this.id,
     this.farmGroupId,
     required this.title,
     this.description,
     this.dueDate,
     required this.status,
     this.assignedToId,
-    required this.createdAt,
-    required this.updatedAt,
+    this.createdAt,
+    this.updatedAt,
   });
 
   // Factory constructor to create a Task from JSON
@@ -47,8 +47,8 @@ class Task {
       'due_date': dueDate?.toIso8601String(),
       'status': status,
       'assigned_to_id': assignedToId,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'created_at': createdAt?.toIso8601String(),
+      'updated_at': updatedAt?.toIso8601String(),
     };
   }
 }

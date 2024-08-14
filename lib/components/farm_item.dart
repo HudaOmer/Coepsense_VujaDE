@@ -32,7 +32,7 @@ class FarmItem extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15.0),
                           child: Image.asset(farmer, height: 70.0))),
                   Text(name, style: const TextStyle(color: Colors.white)),
-                  SizedBox(width: MediaQuery.of(context).size.width * 0.3),
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.1),
                   Icon(Icons.arrow_forward_ios, color: mainColor),
                 ])),
       ),

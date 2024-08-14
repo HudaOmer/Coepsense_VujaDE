@@ -21,6 +21,19 @@ class TaskService {
     };
   }
 
+  // Method to store a new task
+  Future<void> storeTask(Task task) async {
+    final response = await http.post(
+      Uri.parse('$_baseUrl/store'), // Ensure the URL endpoint is correct
+      headers: await _authHeaders(),
+      body: jsonEncode(task.toJson()),
+    );
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to create task');
+    }
+  }
+
   // Fetch tasks assigned to the current user and tasks due today
   Future<List<Task>> fetchTasks() async {
     final response = await http.get(
@@ -72,6 +85,12 @@ final taskServiceProvider = Provider<TaskService>((ref) {
   return TaskService(authService);
 });
 
+// Provider to store a task
+final storeTaskProvider = FutureProvider.family<void, Task>((ref, task) async {
+  final taskService = ref.read(taskServiceProvider);
+  await taskService.storeTask(task);
+});
+
 // Providers for TaskService methods
 final fetchTasksProvider = FutureProvider<List<Task>>((ref) async {
   final taskService = ref.read(taskServiceProvider);
@@ -85,6 +104,7 @@ final updateTaskStatusProvider =
   await taskService.updateStatus(data['taskId'], data['status']);
 });
 
+// Provider to request task revision
 final sendRevisionRequestProvider =
     FutureProvider.family<void, String>((ref, taskId) async {
   final taskService = ref.read(taskServiceProvider);

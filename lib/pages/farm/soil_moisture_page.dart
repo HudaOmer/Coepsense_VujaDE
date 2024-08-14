@@ -29,7 +29,6 @@ class SoilMoisturePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
                 child: ColoredBarChart(
@@ -56,12 +55,7 @@ class SoilMoisturePage extends StatelessWidget {
                     weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
                     barColor: mainColor)),
             // const WeeklySummaryChart(),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.1,
-                  top: MediaQuery.of(context).size.width * 0.1),
-              child: const Text('Weather', textAlign: TextAlign.center),
-            ),
+            const Text('Weather', textAlign: TextAlign.center),
             const TodayWeatherTemplate(),
           ])),
     );
