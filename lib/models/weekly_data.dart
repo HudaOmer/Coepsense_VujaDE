@@ -3,13 +3,14 @@ class WeeklyData {
   final List<double> humidities;
   final List<double> lights;
   final List<double> soilMoistures;
+  final List<double> tds;
 
-  WeeklyData({
-    required this.temperatures,
-    required this.humidities,
-    required this.lights,
-    required this.soilMoistures,
-  });
+  WeeklyData(
+      {required this.temperatures,
+      required this.humidities,
+      required this.lights,
+      required this.soilMoistures,
+      required this.tds});
 
   // Factory constructor to create an instance from JSON data
   factory WeeklyData.fromJson(Map<String, dynamic> json) {
@@ -18,6 +19,7 @@ class WeeklyData {
       humidities: _convertToDoubleList(json['humidities']),
       lights: _convertToDoubleList(json['lights']),
       soilMoistures: _convertToDoubleList(json['soil_moistures']),
+      tds: _convertToDoubleList(json['tds']),
     );
   }
 

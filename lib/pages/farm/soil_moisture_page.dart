@@ -5,11 +5,13 @@ import '../../provider/weekly_data_provider.dart';
 import '../../utils/colors.dart';
 import '../../components/home_page_components/colored_bar_chart.dart';
 
-String title = 'Soil Moisture      ';
+// String title = 'Soil Moisture      ';
 
 class SoilMoisturePage extends ConsumerWidget {
   final int farmId;
-  const SoilMoisturePage({super.key, required this.farmId});
+  final String farmName;
+  const SoilMoisturePage(
+      {super.key, required this.farmId, required this.farmName});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +20,9 @@ class SoilMoisturePage extends ConsumerWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
           title: Center(
-              child: Text(title, style: const TextStyle(color: Colors.black))),
+              child: Text(farmName,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.black))),
           elevation: 0,
           backgroundColor: Colors.white,
           leading: InkWell(
@@ -43,25 +47,25 @@ class SoilMoisturePage extends ConsumerWidget {
                 SizedBox(
                     height: MediaQuery.of(context).size.height * 0.5,
                     child: ColoredBarChart(
-                        weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
-                        barColor: mainColor,
+                        weeklySummary: weeklyData.temperatures,
+                        barColor: contrastColor,
                         name: 'Temperature')),
                 SizedBox(
                     height: MediaQuery.of(context).size.height * 0.5,
                     child: ColoredBarChart(
-                        weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                        weeklySummary: weeklyData.tds,
                         barColor: mainColor,
                         name: 'TDS')),
                 SizedBox(
                     height: MediaQuery.of(context).size.height * 0.5,
                     child: ColoredBarChart(
-                        weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
-                        barColor: mainColor,
+                        weeklySummary: weeklyData.soilMoistures,
+                        barColor: contrastColor,
                         name: 'Soil Moisture')),
                 SizedBox(
                     height: MediaQuery.of(context).size.height * 0.5,
                     child: ColoredBarChart(
-                        weeklySummary: const [50, 90, 50, 30, 25, 40, 35],
+                        weeklySummary: weeklyData.lights,
                         barColor: mainColor,
                         name: 'Light')),
                 // const WeeklySummaryChart(),

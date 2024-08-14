@@ -45,8 +45,8 @@ class TestPage extends ConsumerWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                SoilMoisturePage(farmId: farm.id),
+                            builder: (context) => SoilMoisturePage(
+                                farmName: farm.name, farmId: farm.id),
                           ),
                         );
                       },

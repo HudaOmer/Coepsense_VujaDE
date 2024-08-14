@@ -24,7 +24,7 @@ class ColoredBarChart extends StatelessWidget {
         thuAmount: weeklySummary[4],
         friAmount: weeklySummary[5],
         satAmount: weeklySummary[6]);
-
+    double maxY = weeklySummary.reduce((a, b) => a > b ? a : b);
     myBarData.initializeBarData();
     return Column(
       children: [
@@ -33,16 +33,16 @@ class ColoredBarChart extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(color: mainColor, height: 15.0, width: 15.0),
+                Container(color: barColor, height: 15.0, width: 15.0),
                 const SizedBox(width: 8.0),
-                const Text('Temperature', textAlign: TextAlign.center),
+                Text(name, textAlign: TextAlign.center),
               ],
             )),
         Container(
           padding: const EdgeInsets.fromLTRB(30.0, 5, 10, 5),
           height: 300,
           child: BarChart(BarChartData(
-            maxY: 100,
+            maxY: maxY + maxY * 0.1,
             minY: 0,
             gridData: FlGridData(show: false),
             borderData: FlBorderData(show: false),
