@@ -6,11 +6,16 @@ import 'package:fl_chart/fl_chart.dart';
 class ColoredBarChart extends StatelessWidget {
   final List<double> weeklySummary;
   final Color barColor;
+  final String name;
   const ColoredBarChart(
-      {super.key, required this.weeklySummary, required this.barColor});
+      {super.key,
+      required this.weeklySummary,
+      required this.barColor,
+      required this.name});
 
   @override
   Widget build(BuildContext context) {
+    print(weeklySummary);
     MyBarData myBarData = MyBarData(
         sunAmount: weeklySummary[0],
         monAmount: weeklySummary[1],

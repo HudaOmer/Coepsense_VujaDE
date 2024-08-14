@@ -40,8 +40,10 @@ class MainHomePage extends StatelessWidget {
             const CategoryList(),
             const SizedBox(height: 15),
             ColoredBarChart(
-                weeklySummary: const [1000, 600, 1500, 250, 1700, 1200, 650],
-                barColor: mainColor)
+              weeklySummary: const [1000, 600, 1500, 250, 1700, 1200, 650],
+              barColor: mainColor,
+              name: 'Temperature',
+            )
           ],
         ),
       ),
