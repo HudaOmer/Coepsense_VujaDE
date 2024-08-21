@@ -28,48 +28,20 @@ class WeatherWidget extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 30),
-                    Container(
-                        height: 0.5,
-                        color: textColor,
-                        width: MediaQuery.of(context).size.width * 0.15),
-                    const SizedBox(height: 30),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          WeatherState(
-                              icon: Icons.water_drop_outlined, text: "98%"),
-                          SizedBox(width: 20),
-                          WeatherState(icon: Icons.cloud, text: "0mm")
-                        ])
                   ],
                 ),
                 Container(
                     width: 0.5,
                     color: textColor,
-                    height: MediaQuery.of(context).size.width * 0.15),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text('Tasks',
-                        style: TextStyle(fontSize: 25, color: textColor)),
-                    const SizedBox(height: 30),
-                    Container(
-                        height: 0.5,
-                        color: textColor,
-                        width: MediaQuery.of(context).size.width * 0.15),
-                    const SizedBox(height: 30),
-                    Container(
-                        height: 0.5,
-                        color: textColor,
-                        width: MediaQuery.of(context).size.width * 0.15),
-                    const SizedBox(height: 30),
-                    Container(
-                        height: 0.5,
-                        color: textColor,
-                        width: MediaQuery.of(context).size.width * 0.15),
-                  ],
-                )
+                    height: MediaQuery.of(context).size.width * 0.05),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      WeatherState(
+                          icon: Icons.water_drop_outlined, text: "98%"),
+                      SizedBox(width: 20),
+                      WeatherState(icon: Icons.cloud, text: "0mm")
+                    ])
               ],
             )),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'widgets/notification_widget.dart';
 
 String title = 'Notifications      ';
@@ -22,24 +21,12 @@ class NotificationScreen extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.1,
-                  top: MediaQuery.of(context).size.width * 0.1),
-              child: const Text('New:'),
-            ),
-            const NotificationItem(isInfo: true),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.1,
-                  top: MediaQuery.of(context).size.width * 0.1),
-              child: const Text('Old:'),
-            ),
-            const NotificationItem(isInfo: false),
-            const NotificationItem(isInfo: false),
-            const NotificationItem(isInfo: false),
-            const NotificationItem(isInfo: false),
+          children: const [
+            NotificationItem(isInfo: true),
+            NotificationItem(isInfo: false),
+            NotificationItem(isInfo: false),
+            NotificationItem(isInfo: false),
+            NotificationItem(isInfo: false),
           ],
         )));
   }

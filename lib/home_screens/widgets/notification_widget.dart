@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/colors.dart';
 
 class NotificationItem extends StatelessWidget {
@@ -12,9 +11,10 @@ class NotificationItem extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
       child: Center(
         child: Container(
+            width: MediaQuery.of(context).size.width * 0.9,
             decoration: BoxDecoration(
               color: isInfo ? mainColor : Colors.white,
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
                     color: Colors.black.withOpacity(0.2),
@@ -31,9 +31,8 @@ class NotificationItem extends StatelessWidget {
                   children: [
                     const SizedBox(width: 17.0),
                     Text(isInfo ? 'Info' : 'Alert',
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: isInfo ? Colors.grey : Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                     const SizedBox(width: 17.0),
                     isInfo
                         ? const Icon(Icons.info, size: 25)
@@ -48,7 +47,7 @@ class NotificationItem extends StatelessWidget {
                       'You have new weather update for the day You have new weather update for the day',
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: TextStyle(fontSize: 15, color: Colors.grey)),
+                      style: TextStyle(fontSize: 15, color: Colors.black)),
                 )
               ],
             )),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../utils/colors.dart';
 import '../../utils/data.dart';
 import 'widgets/settings_widget.dart';
 
@@ -27,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
                   SettingsIconText(
                       icon: Icons.person_2_outlined,
                       space: 20,
-                      text: 'Edit Profile',
+                      text: 'Profile',
                       iconColor: Colors.black,
                       textStyles: mediumBlackTextStyle,
                       onTap: () {}),
@@ -48,7 +47,7 @@ class SettingsScreen extends StatelessWidget {
                   SettingsIconText(
                       icon: Icons.lock_outline,
                       space: 20,
-                      text: 'Privacy',
+                      text: 'Reset Password',
                       iconColor: Colors.black,
                       textStyles: mediumBlackTextStyle,
                       onTap: () {}),
@@ -57,13 +56,6 @@ class SettingsScreen extends StatelessWidget {
               SettingsWidget(
                 head: 'Support & About',
                 settingsArray: [
-                  SettingsIconText(
-                      icon: Icons.credit_card,
-                      space: 20,
-                      text: 'My Subscription',
-                      iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle,
-                      onTap: () {}),
                   SettingsIconText(
                       icon: Icons.help_outline_rounded,
                       space: 20,
@@ -78,32 +70,6 @@ class SettingsScreen extends StatelessWidget {
                       iconColor: Colors.black,
                       textStyles: mediumBlackTextStyle,
                       onTap: () {})
-                ],
-              ),
-              SettingsWidget(
-                head: 'Actions',
-                settingsArray: [
-                  SettingsIconText(
-                      icon: Icons.flag_outlined,
-                      space: 20,
-                      text: 'Report a Problem',
-                      iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle,
-                      onTap: () {}),
-                  SettingsIconText(
-                      icon: Icons.group_add_outlined,
-                      space: 20,
-                      text: 'Add account',
-                      iconColor: Colors.black,
-                      textStyles: mediumBlackTextStyle,
-                      onTap: () {}),
-                  SettingsIconText(
-                      icon: Icons.login_outlined,
-                      space: 20,
-                      text: 'Log Out',
-                      iconColor: mainColor,
-                      textStyles: boldMediumColoredTextStyle,
-                      onTap: () {}),
                 ],
               ),
             ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../auth_screens/face_id_setup_screen.dart';
+import '../farm_screens.dart/farmers_screen.dart';
 import '../global_widgets/custom_icon.dart';
 import '../utils/icons.dart';
 import 'home_screen.dart';
@@ -19,7 +19,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int currentIndex = 0;
   List<Widget> pages = const [
     HomePage(),
-    FaceIDSetupScreen(),
+    FarmersScreens(),
     NotificationScreen(),
     SettingsScreen()
   ];
