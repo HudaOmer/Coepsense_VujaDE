@@ -20,9 +20,9 @@ class TasksDetailWidget extends StatelessWidget {
               const SizedBox(height: 50),
               Row(
                 children: [
-                  SizedBox(width: MediaQuery.of(context).size.width * 0.15),
-                  const Icon(Icons.message_rounded),
-                  const SizedBox(height: 10),
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.1),
+                  const Icon(Icons.message_rounded, color: Colors.white),
+                  const SizedBox(width: 10),
                   const Text('Tasks',
                       style: TextStyle(fontSize: 25, color: Colors.white)),
                 ],

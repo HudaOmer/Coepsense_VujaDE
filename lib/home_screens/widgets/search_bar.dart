@@ -12,7 +12,7 @@ class SearchBar extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10, bottom: 10),
         decoration: BoxDecoration(
             color: mainColor,
-            border: Border.all(color: Colors.grey),
+            border: Border.all(color: Colors.white),
             borderRadius: BorderRadius.circular(15.0)),
         child: Padding(
           padding: const EdgeInsets.only(left: 17.0, right: 17.0, bottom: 5.0),
@@ -20,15 +20,16 @@ class SearchBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Center(
-                  child: Icon(Icons.search, size: 30, color: Colors.black45)),
+                  child: Icon(Icons.search, size: 30, color: Colors.white)),
               Expanded(
                   child: Padding(
                 padding: const EdgeInsets.only(
                     left: 17.0, right: 17.0, bottom: 5.0, top: 5.0),
                 child: TextFormField(
-                  cursorColor: Colors.grey,
+                  cursorColor: Colors.white,
                   decoration: const InputDecoration.collapsed(
-                      hintText: 'Search', hintStyle: TextStyle(fontSize: 15)),
+                      hintText: 'Search',
+                      hintStyle: TextStyle(fontSize: 15, color: Colors.white)),
                 ),
               )),
             ],
