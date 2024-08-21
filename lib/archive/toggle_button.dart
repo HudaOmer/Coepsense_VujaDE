@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../components/custom_switch.dart';
+
+import 'components/custom_switch.dart';
 
 class SwitchesPage extends StatefulWidget {
   const SwitchesPage({super.key});

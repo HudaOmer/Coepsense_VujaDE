@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../pages/farm/crop_price_page.dart';
-import '../models/farm.dart';
+import 'models/farm.dart';
 import '../utils/colors.dart';
-import '../pages/farm/income_and_expenses_page.dart';
-import '../pages/farm/soil_moisture_page.dart';
+import 'pages/farm/crop_price_page.dart';
+import 'pages/farm/income_and_expenses_page.dart';
+import 'pages/farm/soil_moisture_page.dart';
 
 class TestTwo extends StatelessWidget {
   final int length;

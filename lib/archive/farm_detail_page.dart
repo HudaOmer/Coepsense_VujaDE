@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../pages/farm/crop_price_page.dart';
-import '../provider/farm_provider.dart';
 import '../utils/colors.dart';
-import '../pages/farm/income_and_expenses_page.dart';
-import '../pages/farm/soil_moisture_page.dart';
+import 'pages/farm/crop_price_page.dart';
+import 'pages/farm/income_and_expenses_page.dart';
+import 'pages/farm/soil_moisture_page.dart';
+import 'provider/farm_provider.dart';
 
 String title = 'Farm 1      ';
 
