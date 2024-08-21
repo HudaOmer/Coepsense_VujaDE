@@ -6,6 +6,7 @@ String carbs = 'assets/images/icons/Carbs.png';
 String humidity = 'assets/images/icons/humidity.png';
 String trash = 'assets/images/icons/Trash.png';
 String notified = 'assets/images/icons/Bell_pin_fill.png';
+String notified2 = 'assets/images/icons/v2/notification-icon-alert-3.png';
 String faceID = 'assets/images/icons/v2/Face ID.png';
 
 class IconMode {
@@ -14,16 +15,21 @@ class IconMode {
 }
 
 // v2
-IconMode home2 = IconMode(
-    mode: ['assets/images/icons/v2/Home.png', 'assets/images/icons/Home.png']);
+IconMode home2 = IconMode(mode: [
+  'assets/images/icons/v2/Home_on.png',
+  'assets/images/icons/v2/Home.png'
+]);
 IconMode calender2 = IconMode(mode: [
   'assets/images/icons/Calendar_on.png',
   'assets/images/icons/v2/Calendar.png'
 ]);
-IconMode notifications2 = IconMode(
-    mode: ['assets/images/icons/Bell_on.png', 'assets/images/icons/v2/Bell.png']);
+IconMode notifications2 = IconMode(mode: [
+  'assets/images/icons/v2/Bell_on.png',
+  'assets/images/icons/v2/Bell.png'
+]);
 IconMode profile2 = IconMode(mode: [
-  'assets/images/icons/Setting_alt_fill.png','assets/images/icons/v2/Setting_line.png'
+  'assets/images/icons/v2/Setting_line_on.png',
+  'assets/images/icons/v2/Setting_line.png'
 ]);
 
 // v1

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../auth_screens/face_id_setup_screen.dart';
 import '../global_widgets/custom_icon.dart';
-import '../task_screens/detail_screen.dart';
-import '../task_screens/tasks_management_screen.dart';
 import '../utils/icons.dart';
 import 'home_screen.dart';
+import 'notifications_screen.dart';
+import 'settings_screen.dart';
 
 double iconSize = 35;
 
@@ -20,8 +20,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
   List<Widget> pages = const [
     HomePage(),
     FaceIDSetupScreen(),
-    DetailScreen(),
-    TaskManagementScreen()
+    NotificationScreen(),
+    SettingsScreen()
   ];
 
   @override
