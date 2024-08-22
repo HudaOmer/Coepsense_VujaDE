@@ -10,24 +10,21 @@ class WeatherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: contrastColor,
-        appBar: CustomAppBar(
-            color: contrastColor,
-            title: 'Tasks Management',
-            body: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.sunny, color: Colors.amber, size: 60),
-                  SizedBox(width: 20),
-                  Text('19C',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 28)),
-                ],
-              ),
-              const SizedBox(height: 10),
-            ]),
+        appBar: CustomAppBar(color: contrastColor, title: 'Weather', body: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(Icons.sunny, color: Colors.amber, size: 60),
+              SizedBox(width: 20),
+              Text('19C',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 28)),
+            ],
+          ),
+          const SizedBox(height: 10),
+        ]),
         body: Padding(
           padding: const EdgeInsets.only(top: 10),
           child: Container(
@@ -49,9 +46,6 @@ class WeatherScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                   const Text('Tasks', style: TextStyle(fontSize: 23)),
-                  // GridView.count(
-                  //   crossAxisCount: 2,
-                  //   children: [
                   WeatherItemOne(
                       parameter: 'Wind',
                       parameterIcon: Icons.air,
@@ -62,38 +56,6 @@ class WeatherScreen extends StatelessWidget {
                           const Text('no')
                         ],
                       )),
-                  //     WeatherItemOne(
-                  //         parameter: 'Wind',
-                  //         parameterIcon: Icons.air,
-                  //         value: '30 km/h',
-                  //         widget: Row(
-                  //           children: [
-                  //             Icon(Icons.compass_calibration, color: mainColor),
-                  //             const Text('no')
-                  //           ],
-                  //         )),
-                  //     WeatherItemOne(
-                  //         parameter: 'Wind',
-                  //         parameterIcon: Icons.air,
-                  //         value: '30 km/h',
-                  //         widget: Row(
-                  //           children: [
-                  //             Icon(Icons.compass_calibration, color: mainColor),
-                  //             const Text('no')
-                  //           ],
-                  //         )),
-                  //     WeatherItemOne(
-                  //         parameter: 'Wind',
-                  //         parameterIcon: Icons.air,
-                  //         value: '30 km/h',
-                  //         widget: Row(
-                  //           children: [
-                  //             Icon(Icons.compass_calibration, color: mainColor),
-                  //             const Text('no')
-                  //           ],
-                  //         )),
-                  //   ],
-                  // ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
