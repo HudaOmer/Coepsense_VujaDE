@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../global_widgets/colored_button.dart';
 import '../utils/colors.dart';
-import 'widgets/custom_appbar.dart';
+import '../global_widgets/custom_appbar.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});

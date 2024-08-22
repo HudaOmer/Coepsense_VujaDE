@@ -24,10 +24,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       decoration: BoxDecoration(
         color: color,
-        image: DecorationImage(
-          image: AssetImage(image!),
-          fit: BoxFit.fitWidth,
-        ),
+        image: image!.isNotEmpty
+            ? DecorationImage(image: AssetImage(image!), fit: BoxFit.fitWidth)
+            : null,
       ),
       child: AppBar(
         elevation: 0,

@@ -24,7 +24,8 @@ class WeatherWidget extends StatelessWidget {
                       children: const [
                         Text('19',
                             style: TextStyle(fontSize: 50, color: textColor)),
-                        Icon(Icons.sunny, size: 50, color: textColor),
+                        SizedBox(width: 10),
+                        Icon(Icons.sunny, size: 50, color: Colors.amber),
                       ],
                     ),
                     const SizedBox(height: 30),

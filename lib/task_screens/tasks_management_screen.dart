@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/colors.dart';
-import 'widgets/custom_appbar.dart';
+import '../global_widgets/custom_appbar.dart';
 import 'widgets/task_item.dart';
 
 class TaskManagementScreen extends StatelessWidget {
