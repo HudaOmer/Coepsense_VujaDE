@@ -20,12 +20,12 @@ class SettingsWidget extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(30, 5, 20, 5),
             child: Text(head, style: boldMediumBlackTextStyle)),
         Padding(
-          padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+          padding: const EdgeInsets.fromLTRB(30, 5, 20, 5),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Container(
                 color: Colors.white,
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
                 child: Column(children: settingsArray)),
           ),
         ),
@@ -59,7 +59,7 @@ class SettingsIconText extends StatelessWidget {
     return GestureDetector(
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
           child: Row(
             children: [
               Icon(icon, color: iconColor, size: 25),

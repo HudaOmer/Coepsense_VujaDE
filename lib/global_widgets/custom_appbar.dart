@@ -33,7 +33,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: title?.isNotEmpty == true
             ? Center(
                 child: Text(title!,
-                    style: const TextStyle(fontSize: 26, color: Colors.white)))
+                    style: const TextStyle(fontSize: 22, color: Colors.white)))
             : null,
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.transparent,

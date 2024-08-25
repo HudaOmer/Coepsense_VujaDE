@@ -7,7 +7,7 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 60,
+        height: 50,
         width: MediaQuery.of(context).size.width * 0.9,
         padding: const EdgeInsets.only(top: 10, bottom: 10),
         decoration: BoxDecoration(
@@ -20,16 +20,16 @@ class SearchBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Center(
-                  child: Icon(Icons.search, size: 30, color: Colors.white)),
+                  child: Icon(Icons.search, size: 20, color: Colors.white)),
               Expanded(
                   child: Padding(
-                padding: const EdgeInsets.only(
-                    left: 17.0, right: 17.0, bottom: 5.0, top: 5.0),
+                padding:
+                    const EdgeInsets.only(left: 17.0, right: 17.0, bottom: 5.0),
                 child: TextFormField(
                   cursorColor: Colors.white,
                   decoration: const InputDecoration.collapsed(
                       hintText: 'Search',
-                      hintStyle: TextStyle(fontSize: 15, color: Colors.white)),
+                      hintStyle: TextStyle(fontSize: 11, color: Colors.white)),
                 ),
               )),
             ],

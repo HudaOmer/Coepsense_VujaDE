@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../global_widgets/colored_button.dart';
 import '../global_widgets/decorated_text_field.dart';
 import '../utils/colors.dart';
+import 'widgets/field_widget.dart';
 
 class FertilizationDataScreen extends StatefulWidget {
   const FertilizationDataScreen({super.key});
@@ -12,8 +13,9 @@ class FertilizationDataScreen extends StatefulWidget {
 }
 
 class _FertilizationDataScreenState extends State<FertilizationDataScreen> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController FertilizerController = TextEditingController();
+  TextEditingController quantityController = TextEditingController();
+  TextEditingController spaceController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -26,8 +28,8 @@ class _FertilizationDataScreenState extends State<FertilizationDataScreen> {
         backgroundColor: Colors.white,
         leading: const Icon(Icons.arrow_back_ios),
         title: const Center(
-          child: Text('Fertilization Data',
-              style: TextStyle(fontSize: 30, color: Colors.black)),
+          child: Text('Fertilization Data      ',
+              style: TextStyle(color: Colors.black)),
         ),
       ),
       body: SingleChildScrollView(
@@ -38,58 +40,21 @@ class _FertilizationDataScreenState extends State<FertilizationDataScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text('Fertilizer Type'),
-                  DecoratedTextField(
-                      label: '',
-                      hint: '',
-                      isObsecure: false,
-                      borderColor: mainColor,
-                      controller: emailController,
-                      validator: (value) =>
-                          value!.isEmpty ? 'Please Enter a value' : null),
-                ],
-              ),
+              FieldsWidget(
+                  controller: FertilizerController, name: 'Fertilizer Type'),
+              const SizedBox(height: 20),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('Quantity'),
-                      DecoratedTextField(
-                          label: '',
-                          size: 0.4,
-                          hint: '',
-                          isObsecure: true,
-                          borderColor: mainColor,
-                          controller: passwordController,
-                          validator: (value) =>
-                              value!.isEmpty ? 'Please Enter a value' : null),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text('Space'),
-                      DecoratedTextField(
-                          label: '',
-                          size: 0.4,
-                          hint: '',
-                          isObsecure: true,
-                          borderColor: mainColor,
-                          controller: passwordController,
-                          validator: (value) =>
-                              value!.isEmpty ? 'Please Enter a value' : null),
-                    ],
-                  ),
+                  FieldsWidget(
+                      controller: quantityController,
+                      size: 0.35,
+                      name: 'Quantity'),
+                  FieldsWidget(
+                      controller: spaceController, size: 0.35, name: 'Space'),
                 ],
               ),
-              const SizedBox(height: 10),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.12),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.25),
               ColoredButton(
                   color: mainColor,
                   text: 'Done',

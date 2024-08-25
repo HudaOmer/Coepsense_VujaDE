@@ -20,6 +20,7 @@ class SettingsScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(height: 30),
               SettingsWidget(
                 head: 'Account',
                 settingsArray: [
@@ -72,6 +73,7 @@ class SettingsScreen extends StatelessWidget {
                       onTap: () {})
                 ],
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.3),
             ],
           ),
         ),

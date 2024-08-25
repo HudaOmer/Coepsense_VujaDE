@@ -17,32 +17,32 @@ class TasksDetailWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
               Row(
                 children: [
-                  SizedBox(width: MediaQuery.of(context).size.width * 0.1),
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.05),
                   const Icon(Icons.message_rounded, color: Colors.white),
                   const SizedBox(width: 10),
                   const Text('Tasks',
-                      style: TextStyle(fontSize: 25, color: Colors.white)),
+                      style: TextStyle(fontSize: 15, color: Colors.white)),
                 ],
               ),
+              const SizedBox(height: 40),
+              Container(
+                  height: 0.5,
+                  color: Colors.white,
+                  width: MediaQuery.of(context).size.width * 0.8),
               const SizedBox(height: 30),
               Container(
                   height: 0.5,
                   color: Colors.white,
-                  width: MediaQuery.of(context).size.width * 0.7),
+                  width: MediaQuery.of(context).size.width * 0.8),
               const SizedBox(height: 30),
               Container(
                   height: 0.5,
                   color: Colors.white,
-                  width: MediaQuery.of(context).size.width * 0.7),
-              const SizedBox(height: 30),
-              Container(
-                  height: 0.5,
-                  color: Colors.white,
-                  width: MediaQuery.of(context).size.width * 0.7),
-              const SizedBox(height: 50),
+                  width: MediaQuery.of(context).size.width * 0.8),
+              const SizedBox(height: 40),
             ],
           )),
     );

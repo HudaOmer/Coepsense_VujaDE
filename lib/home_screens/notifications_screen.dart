@@ -11,9 +11,6 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-            title: Center(
-                child:
-                    Text(title, style: const TextStyle(color: Colors.black))),
             elevation: 0,
             backgroundColor: Colors.white,
             leading: const Icon(Icons.arrow_back_ios, color: Colors.black)),
@@ -21,12 +18,24 @@ class NotificationScreen extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            NotificationItem(isInfo: true),
-            NotificationItem(isInfo: false),
-            NotificationItem(isInfo: false),
-            NotificationItem(isInfo: false),
-            NotificationItem(isInfo: false),
+          children: [
+            const SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width * 0.1,
+              ),
+              child: Text(title,
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700)),
+            ),
+            const SizedBox(height: 10),
+            const NotificationItem(isInfo: true),
+            const NotificationItem(isInfo: false),
+            const NotificationItem(isInfo: false),
+            const NotificationItem(isInfo: false),
+            const NotificationItem(isInfo: false),
           ],
         )));
   }

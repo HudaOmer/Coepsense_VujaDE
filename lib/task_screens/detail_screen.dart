@@ -19,15 +19,15 @@ class DetailScreen extends StatelessWidget {
             Container(
                 color: Colors.white,
                 height: 0.5,
-                width: MediaQuery.of(context).size.width * 0.7),
-            const SizedBox(height: 30),
+                width: MediaQuery.of(context).size.width * 0.85),
+            const SizedBox(height: 20),
             const TextColumn(
                 isColored: false, title: 'Date', subtitle: 'Aug 20, 2024'),
             Container(
                 color: Colors.white,
                 height: 0.5,
-                width: MediaQuery.of(context).size.width * 0.7),
-            const SizedBox(height: 16),
+                width: MediaQuery.of(context).size.width * 0.85),
+            const SizedBox(height: 10),
           ],
         ),
         body: Padding(
@@ -63,13 +63,26 @@ class DetailScreen extends StatelessWidget {
                           subtitle: '03:00 pm')
                     ],
                   ),
-                  const SizedBox(height: 10),
-                  const Text('Task Discription',
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 30),
+                  Row(
+                    children: const [
+                      SizedBox(width: 30),
+                      Text('Task Discription',
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w700)),
+                    ],
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+                  Row(
+                    children: [
+                      const SizedBox(width: 30),
+                      Icon(Icons.image, color: contrastColor),
+                      Icon(Icons.add_comment_sharp, color: contrastColor),
+                    ],
+                  ),
                   Center(
                       child: SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.4)),
+                          height: MediaQuery.of(context).size.height * 0.25)),
                   ColoredButton(
                       color: contrastColor, text: 'Done', onPressed: () {}),
                   const SizedBox(height: 10),
@@ -99,14 +112,15 @@ class TextColumn extends StatelessWidget {
         Text(title,
             style: TextStyle(
                 color: isColored ? Colors.black : Colors.white,
-                fontSize: 18,
+                fontSize: 15,
                 fontWeight: FontWeight.w400)),
         const SizedBox(height: 10),
         Text(subtitle,
             style: TextStyle(
                 color: isColored ? mainColor : Colors.white,
-                fontSize: 25,
+                fontSize: 18,
                 fontWeight: FontWeight.w600)),
+        const SizedBox(height: 5),
       ],
     );
   }

@@ -11,16 +11,19 @@ class FertilizationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: contrastColor,
       appBar: CustomAppBar(
-        color: Colors.white,
+        color: Colors.black26,
         image: farmer,
         body: [
           const Center(
             child: Text('Fertilization History',
-                style: TextStyle(fontSize: 28, color: Colors.white)),
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700)),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 80),
           Container(
-            height: 50,
+            height: 20,
             decoration: BoxDecoration(
                 color: contrastColor,
                 borderRadius:
@@ -38,9 +41,15 @@ class FertilizationScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text('Date', style: TextStyle(color: mediumGreyColor)),
-                      Text('Date', style: TextStyle(color: mediumGreyColor)),
-                      Text('Date', style: TextStyle(color: mediumGreyColor)),
+                      Text('Date',
+                          style:
+                              TextStyle(color: mediumGreyColor, fontSize: 11)),
+                      Text('Fertilizer Type',
+                          style:
+                              TextStyle(color: mediumGreyColor, fontSize: 11)),
+                      Text('Space',
+                          style:
+                              TextStyle(color: mediumGreyColor, fontSize: 11)),
                     ],
                   ),
                   Container(
@@ -65,14 +74,16 @@ class RowItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(15.0),
+      width: MediaQuery.of(context).size.width * 0.8,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('1/1/2025', style: TextStyle(color: mediumGreyColor)),
-          Text('A', style: TextStyle(color: mediumGreyColor)),
-          Text('100m2', style: TextStyle(color: mediumGreyColor)),
+          Text('1/1/2025',
+              style: TextStyle(color: mediumGreyColor, fontSize: 11)),
+          Text('A', style: TextStyle(color: mediumGreyColor, fontSize: 11)),
+          Text('100m2', style: TextStyle(color: mediumGreyColor, fontSize: 11)),
         ],
       ),
     );

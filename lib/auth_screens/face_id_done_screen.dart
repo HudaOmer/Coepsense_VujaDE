@@ -19,13 +19,18 @@ class FaceIDDoneScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.2),
             // CustomIcon(iconName: faceID, height: 200),
             Icon(Icons.check_circle_outlined, color: mainColor, size: 200),
             const SizedBox(height: 10),
             const Center(
-                child: Text('Face ID is now set up',
-                    maxLines: 2, style: TextStyle(fontSize: 26))),
+                child: SizedBox(
+              width: 250,
+              child: Text('Face ID is now set up',
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 26)),
+            )),
             SizedBox(height: MediaQuery.of(context).size.height * 0.15),
             ColoredButton(color: mainColor, text: 'Done', onPressed: () {}),
             const SizedBox(height: 40),

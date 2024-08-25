@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../farm_screens/farm_data_screen.dart';
-import '../farm_screens/weather_screen.dart';
 import '../global_widgets/custom_icon.dart';
 import '../utils/icons.dart';
 import 'home_screen.dart';
@@ -20,7 +18,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int currentIndex = 0;
   List<Widget> pages = const [
     HomePage(),
-    WeatherScreen(),
+    Center(child: Text('F*********')),
     NotificationScreen(),
     SettingsScreen()
   ];

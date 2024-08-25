@@ -7,7 +7,7 @@ class TaskItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 15),
         child: Container(
             width: MediaQuery.of(context).size.width * 0.9,
             decoration: BoxDecoration(
@@ -22,7 +22,7 @@ class TaskItem extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -38,12 +38,12 @@ class TaskItem extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                        Text('Completed', style: TextStyle(fontSize: 22)),
+                        Text('Task', style: TextStyle(fontSize: 13)),
                         Text('2 Days ago',
-                            style: TextStyle(color: Colors.grey)),
+                            style: TextStyle(color: Colors.grey, fontSize: 11)),
                       ],
                     ),
-                    SizedBox(width: MediaQuery.of(context).size.width * 0.3),
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.08),
                     Container(
                       width: 100,
                       height: 30,
@@ -51,8 +51,9 @@ class TaskItem extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                           color: contrastColor),
                       child: const Center(
-                          child: Text('Completed',
-                              style: TextStyle(color: Colors.white))),
+                          child: Text('Complete',
+                              style: TextStyle(
+                                  fontSize: 11, color: Colors.white))),
                     ),
                   ]),
             )));
